@@ -10,19 +10,28 @@ export default class HomePage extends Component {
 
     // HomePage Component State
     state = {
-        message: ''
+        listOfRestaurants: [],
     }
 
     // componentDidMount() - used to bring in data from backend, don't need data right now, but have it ready to pull in /api/pretzelPicker data but need to change state template
     componentDidMount() {
         axios.get('/api/pretzelPicker')
             .then((res) => {
-                this.setState({ message: res.data })
+                this.setState({ listOfRestaurants: res.data })
             })
     }
 
     // Rendered in Browser
     render() {
+
+        const listOfRestaurants = this.state.listOfRestaurants.map(
+            (restaurant) => {
+                return <div>
+                    <h3>{restaurant.restaurantName}</h3>
+                </div>
+            })
+
+
         return (
             <div className='homePage'>
 
@@ -36,11 +45,14 @@ export default class HomePage extends Component {
                 <h1>Pretzel Picker</h1>
 
 
-                <div className='pageBody'>
-                    <h2>I like pretzels. <br/> I eat them when they are on the menu. <br/> Where are the best pretzels in Atlanta? <br/>Lets see...</h2>
+                <div className='homePageSiteExplanation'>
+                    <h2>I like pretzels. <br /> I eat them when they are on the menu. <br /> Where are the best pretzels in Atlanta? <br />Let's see...</h2>
                 </div>
 
-                
+                <div className='homePagePretzelsByRank'>
+                    <h3>Pretzels by Rank</h3>
+                    {listOfRestaurants}
+                </div>
 
             </div>
         )

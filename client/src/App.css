@@ -18,7 +18,12 @@
 }
 
 
-.pageBody {
+.homePageSiteExplanation {
   margin: 35px 200px;
+  text-align: center;
+}
+
+.homePagePretzelsByRank {
+  margin: 50px 200px;
   text-align: center;
 }
