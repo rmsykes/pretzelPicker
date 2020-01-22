@@ -27,10 +27,11 @@ export default class HomePage extends Component {
         const listOfRestaurants = this.state.listOfRestaurants.map(
             (restaurant) => {
                 return <div>
-                    <h3>{restaurant.restaurantName}</h3>
+            <h5>{restaurant.restaurantName} {restaurant.ranking}/5</h5>
                 </div>
             })
 
+       
 
         return (
             <div className='homePage'>
@@ -50,7 +51,7 @@ export default class HomePage extends Component {
                 </div>
 
                 <div className='homePagePretzelsByRank'>
-                    <h3>Pretzels by Rank</h3>
+                    <h3>Restaurants and Pretzel Rank</h3>
                     {listOfRestaurants}
                 </div>
 
