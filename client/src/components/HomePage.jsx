@@ -24,8 +24,18 @@ export default class HomePage extends Component {
     // Rendered in Browser
     render() {
         return (
-            <div>
-                <h1>Pretzel Picker</h1>
+            <div className='homePage'>
+
+                <div className='pageHeader'>
+                    <nav>
+                        <Link to='/'><button>Home</button></Link>
+                        <Link to='/players'><button>Players</button></Link>
+                        <Link to='/scores'><button>Scores</button></Link>
+                        <Link to='/about'><button>About</button></Link>
+                    </nav>
+
+                    <h1>Pretzel Picker</h1>
+                </div>
             </div>
         )
     }
