@@ -31,8 +31,17 @@ export default class HomePage extends Component {
                         <Link to='/'><button>Home</button></Link>
                     </nav>
 
-                    <h1>Pretzel Picker</h1>
+
                 </div>
+                <h1>Pretzel Picker</h1>
+
+
+                <div className='pageBody'>
+                    <h2>I like pretzels. <br/> I eat them when they are on the menu. <br/> Where are the best pretzels in Atlanta? <br/>Lets see...</h2>
+                </div>
+
+                
+
             </div>
         )
     }

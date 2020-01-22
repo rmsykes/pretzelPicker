@@ -16,3 +16,9 @@
   flex-direction: column;
   
 }
+
+
+.pageBody {
+  margin: 35px 200px;
+  text-align: center;
+}
