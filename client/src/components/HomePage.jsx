@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 
-// CREATE AND EXPORT HOMEPAGE COMPONENT
+// Create and export HomePage Component
 export default class HomePage extends Component {
 
     // HomePage Component State
