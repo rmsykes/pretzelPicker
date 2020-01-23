@@ -27,11 +27,13 @@ export default class HomePage extends Component {
         const listOfRestaurants = this.state.listOfRestaurants.map(
             (restaurant) => {
                 return <div>
-            <h5>{restaurant.restaurantName} {restaurant.ranking}/5</h5>
+                    <Link to={`/${restaurant._id}`}>
+                        <h5>{restaurant.restaurantName} {restaurant.ranking}/5</h5>
+                    </Link>
                 </div>
             })
 
-       
+
 
         return (
             <div className='homePage'>
