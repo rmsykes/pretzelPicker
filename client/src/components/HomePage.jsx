@@ -11,6 +11,14 @@ export default class HomePage extends Component {
     // HomePage Component State
     state = {
         listOfRestaurants: [],
+        newPretzel: {
+            restaurantName: String,
+            price: Number,
+            cheese: Boolean,
+            mustard: Boolean,
+            ranking: Number,
+            notes: String,
+        }
     }
 
     // componentDidMount() - used to bring in data from backend, don't need data right now, but have it ready to pull in /api/pretzelPicker data but need to change state template
@@ -19,6 +27,12 @@ export default class HomePage extends Component {
             .then((res) => {
                 this.setState({ listOfRestaurants: res.data })
             })
+    }
+
+
+    createNewPretzel = (evt) => {
+        evt.preventDefalut()
+        
     }
 
     // Rendered in Browser
@@ -55,6 +69,15 @@ export default class HomePage extends Component {
                 <div className='homePagePretzelsByRank'>
                     <h3>Restaurants and Pretzel Rank</h3>
                     {listOfRestaurants}
+                </div>
+
+
+
+                <div className='createPretzelForm'>
+                    <form onSubmit={this.createNewPretzel}>
+
+                    </form>
+
                 </div>
 
             </div>

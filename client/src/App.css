@@ -1,3 +1,5 @@
+/* Home Page */
+
 .homePage {
   background-color: blanchedalmond;
 }
@@ -27,3 +29,21 @@
   margin: 50px 200px;
   text-align: center;
 }
+
+
+
+/* Single Pretzel Page */
+.singlePretzelPage {
+  background-color: blanchedalmond;
+
+}
+
+.singlePretzelPage {
+  text-align: center;
+  flex: 1.5;
+}
+
+.singlePretzelPagePretzelInfo {
+  margin: 50px;
+}
+

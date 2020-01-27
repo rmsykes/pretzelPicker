@@ -17,8 +17,15 @@ export default class SinglePretzel extends Component {
             mustard: Boolean,
             ranking: Number,
             notes: String,
+        },
+        newPretzel: {
+            restaurantName: String,
+            price: Number,
+            cheese: Boolean,
+            mustard: Boolean,
+            ranking: Number,
+            notes: String,
         }
-
     }
 
     // componentDidMount() - brings single pretzel data from backend
@@ -30,10 +37,17 @@ export default class SinglePretzel extends Component {
     }
 
 
+
+    createNewPretzel = (evt) => {
+        evt.preventDefalut()
+        
+    }
+
+
     // Rendered in browser
     render() {
 
-        
+
         return (
             <div className='singlePretzelPage'>
 
@@ -46,7 +60,24 @@ export default class SinglePretzel extends Component {
                 </div>
                 <h1>Pretzel Picker</h1>
 
+                <div className='singlePretzelPagePretzelInfo'>
 
+                <h2>{this.state.pretzel.restaurantName} </h2>
+                <h2>Rank: {this.state.pretzel.ranking}/5</h2>
+                <h2>${this.state.pretzel.price}</h2>
+                <h2>Cheese:{this.state.pretzel.cheese}</h2>
+                <h2>Mustard:{this.state.pretzel.mustard}</h2>
+                <h2>Notes: {this.state.pretzel.notes}</h2>
+
+                </div>
+
+
+                <div className='createPretzelForm'>
+                    <form onSubmit={this.createNewPretzel}>
+
+                    </form>
+
+                </div>
 
 
             </div>
