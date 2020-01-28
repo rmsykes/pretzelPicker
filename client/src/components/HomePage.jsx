@@ -109,16 +109,16 @@ export default class HomePage extends Component {
                             value={this.state.newPretzel.price} />
 
                         <h2>Cheese</h2>
-                        <select
-                            type="boolean"
+                        <input
+                            type="checkbox"
                             name="cheese"
                             placeholder="Select True/False"
                             onChange={this.handleInputChange}
                             value={this.state.newPretzel.cheese} />
 
                         <h2>Mustard</h2>
-                        <select
-                            type="boolean"
+                        <input
+                            type="checkbox"
                             name="mustard"
                             placeholder="Select True/False"
                             onChange={this.handleInputChange}
