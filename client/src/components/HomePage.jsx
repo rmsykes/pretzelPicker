@@ -13,10 +13,10 @@ export default class HomePage extends Component {
         listOfRestaurants: [],
         newPretzel: {
             restaurantName: String,
+            ranking: Number,
             price: Number,
             cheese: Boolean,
             mustard: Boolean,
-            ranking: Number,
             notes: String,
         }
     }
@@ -29,10 +29,16 @@ export default class HomePage extends Component {
             })
     }
 
-
+    // createNewPretzel() - function that 
     createNewPretzel = (evt) => {
         evt.preventDefalut()
         
+    }
+
+    handleInputChange = (evt) => {
+        const copiedNewPretzel = this.state.newPretzel
+        copiedNewPretzel[evt.target.name] = evt.target.value 
+        this.setState({ newDog : copiedNewPretzel} )
     }
 
     // Rendered in Browser
@@ -75,6 +81,19 @@ export default class HomePage extends Component {
 
                 <div className='createPretzelForm'>
                     <form onSubmit={this.createNewPretzel}>
+                        <h1>Create New Pretzel</h1>
+
+                        <h2>Restaurant Name</h2>
+
+                        <h2>Ranking</h2>
+
+                        <h2>Price</h2>
+
+                        <h2>Cheese</h2>
+
+                        <h2>Mustard</h2>
+
+                        <h2>Notes</h2>
 
                     </form>
 
