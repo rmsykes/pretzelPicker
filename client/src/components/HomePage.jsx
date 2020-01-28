@@ -32,13 +32,13 @@ export default class HomePage extends Component {
     // createNewPretzel() - function that 
     createNewPretzel = (evt) => {
         evt.preventDefalut()
-        
+
     }
 
     handleInputChange = (evt) => {
         const copiedNewPretzel = this.state.newPretzel
-        copiedNewPretzel[evt.target.name] = evt.target.value 
-        this.setState({ newDog : copiedNewPretzel} )
+        copiedNewPretzel[evt.target.name] = evt.target.value
+        this.setState({ newDog: copiedNewPretzel })
     }
 
     // Rendered in Browser
@@ -83,18 +83,54 @@ export default class HomePage extends Component {
                     <form onSubmit={this.createNewPretzel}>
                         <h1>Create New Pretzel</h1>
 
+
                         <h2>Restaurant Name</h2>
+                        <input
+                            type="string"
+                            name="restaurantName"
+                            placeholder="Restaurant Name"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.restaurantName} />
 
                         <h2>Ranking</h2>
+                        <input
+                            type="number"
+                            name="ranking"
+                            placeholder="Pretzel Ranking"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.ranking} />
 
                         <h2>Price</h2>
+                        <input
+                            type="number"
+                            name="price"
+                            placeholder="Price"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.price} />
 
                         <h2>Cheese</h2>
+                        <select
+                            type="boolean"
+                            name="cheese"
+                            placeholder="Select True/False"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.cheese} />
 
                         <h2>Mustard</h2>
+                        <select
+                            type="boolean"
+                            name="mustard"
+                            placeholder="Select True/False"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.mustard} />
 
                         <h2>Notes</h2>
-
+                        <input
+                            type="string"
+                            name="notes"
+                            placeholder="Pretzel Notes"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.notes} />
                     </form>
 
                 </div>
