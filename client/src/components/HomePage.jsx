@@ -31,7 +31,7 @@ export default class HomePage extends Component {
 
     // createNewPretzel() on submit of form
     createNewPretzel = (evt) => {
-        evt.preventDefalut()
+        evt.preventDefault()
         const newPretzel = this.state.newPretzel
 
         axios.post('/api/pretzelPicker', newPretzel)
@@ -42,7 +42,7 @@ export default class HomePage extends Component {
 
     // handleInputChange() on form inputs
     handleInputChange = (evt) => {
-        const copiedNewPretzel = this.state.newPretzel
+        const copiedNewPretzel = { ...this.state.newPretzel }
         copiedNewPretzel[evt.target.name] = evt.target.value
         this.setState({ newPretzel: copiedNewPretzel })
     }
@@ -137,11 +137,11 @@ export default class HomePage extends Component {
                             placeholder="Pretzel Notes"
                             onChange={this.handleInputChange}
                             value={this.state.newPretzel.notes} />
-                        
-                        <br/>
-                        <br/>
 
-                        <input type="submit" value="Create New Pretzel"/>
+                        <br />
+                        <br />
+
+                        <input type="submit" value="Create New Pretzel" />
                     </form>
 
                 </div>
