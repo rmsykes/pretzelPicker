@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-
+import { Button, Form, FormControl, FormGroup, Input, FormCheck } from 'react-bootstrap'
 
 
 // Create and export HomePage Component
@@ -86,7 +86,7 @@ export default class HomePage extends Component {
 
                 {/* CREATE PRETZEL FORM */}
                 <div className='createPretzelForm'>
-                    <form onSubmit={this.createNewPretzel}>
+                    <Form onSubmit={this.createNewPretzel}>
                         <h1>Create New Pretzel</h1>
 
 
@@ -123,7 +123,7 @@ export default class HomePage extends Component {
                             value={this.state.newPretzel.cheese} />
 
                         <h2>Mustard</h2>
-                        <input
+                        <Form.Check
                             type="checkbox"
                             name="mustard"
                             placeholder="Select True/False"
@@ -142,7 +142,12 @@ export default class HomePage extends Component {
                         <br />
 
                         <input type="submit" value="Create New Pretzel" />
-                    </form>
+                    </Form>
+
+            
+
+
+
 
                 </div>
 
