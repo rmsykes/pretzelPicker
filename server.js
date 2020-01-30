@@ -17,6 +17,7 @@ const app = express()
  *
  */
 const { PretzelRouter } = require('./controllers/pretzel.js')
+const { UserRouter } = require('./controllers/user.js')
 
 
 /* Step 3
@@ -49,7 +50,8 @@ app.use(express.static(`${__dirname}/client/build`))
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
-app.use('/api/pretzelPicker', PretzelRouter)
+app.use('/api/pretzel', PretzelRouter)
+app.use('/api/user', UserRouter)
 
 /* Step 5
  *
