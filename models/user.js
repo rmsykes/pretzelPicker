@@ -1,32 +1,48 @@
-
 // import mongoose
 const mongoose = require('./connection.js')
 
-
 // user schema
-const SampleModelSchema = new mongoose.Schema({
- name: String
+const UserSchema = new mongoose.Schema({
+ name: String,
+ photo: String
 })
-
 
 // user api
 const UserCollection = mongoose.model('User', UserSchema)
 
 
-/* Step 4
- *
- * TODO: delete this it's just a sample
- *
- */
-function getHelloWorldString() {
-  return 'hello world'
+// crud functions
+
+// getAllUsers()
+const getAllUsers = () => {
+  return UserCollection.find()
 }
 
-/* Step 5
- *
- * TODO: export all functions from this file by adding their names as keys to this
- * object
- */
+// getOneUser()
+const getOneUser = (userId) => {
+  return UserCollection.findById(userId)
+}
+
+// createUser()
+const createUser = (userData) => {
+  return UserCollection.create(userData)
+}
+
+// updateUser()
+const updateUser = (userId, userData) => {
+  return UserCollection.updateOne({ _id: userId }, userData)
+}
+
+// deleteUser()
+const deleteUser = (userId) => {
+  return UserCollection.deleteOne({ _id: userId})
+}
+
+
 module.exports = {
-  getHelloWorldString
+  getAllUsers,
+  getOneUser,
+  createUser,
+  updateUser,
+  deleteUser
 }
