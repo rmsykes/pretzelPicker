@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import HomePage from './components/HomePage.jsx'
-import SinglePretzel from './components/SinglePretzelPage.jsx'
+import AllPretzels from './components/AllPretzels.jsx'
+import SinglePretzel from './components/SinglePretzel.jsx'
 
 
 import './App.css';
@@ -12,7 +13,8 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage}/>
-          <Route exact path="/:pretzelId" component={SinglePretzel}/>
+          <Route exact path="/pretzel" component={AllPretzels}/>
+          <Route exact path="/pretzel/:pretzelId" component={SinglePretzel}/>
 
         </Switch>
       </Router>
