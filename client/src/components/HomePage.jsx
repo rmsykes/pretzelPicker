@@ -115,20 +115,47 @@ export default class HomePage extends Component {
                             value={this.state.newPretzel.price} />
 
                         <h2>Cheese</h2>
-                        <input
+                        {/* <input
                             type="checkbox"
                             name="cheese"
                             placeholder="Select True/False"
                             onChange={this.handleInputChange}
-                            value={this.state.newPretzel.cheese} />
+                            value={this.state.newPretzel.cheese} /> */}
+                        {['checkbox'].map(type => (
+                            <div key={`custom-${type}-1`} className="mb-3">
+                                <Form.Check
+                                    custom
+                                    type={type}
+                                    id={`custom-${type}-1`}
+                                    label=""
+                                    name="cheese"
+                                    onChange={this.handleInputChange}
+                                    value={this.state.newPretzel.cheese}
+                                />
+                            </div>
+                        ))}
 
                         <h2>Mustard</h2>
-                        <Form.Check
+                        {/* <input
                             type="checkbox"
                             name="mustard"
                             placeholder="Select True/False"
                             onChange={this.handleInputChange}
-                            value={this.state.newPretzel.mustard} />
+                            value={this.state.newPretzel.mustard} /> */}
+                        {['checkbox'].map(type => (
+                            <div key={`custom-${type}-2`} className="mb-4">
+                                <Form.Check
+                                    custom
+                                    type={type}
+                                    id={`custom-${type}-2`}
+                                    label=""
+                                    name="mustard"
+                                    onChange={this.handleInputChange}
+                                    value={this.state.newPretzel.mustard}
+
+                                />
+                            </div>
+                        ))}
 
                         <h2>Notes</h2>
                         <input
@@ -143,10 +170,6 @@ export default class HomePage extends Component {
 
                         <input type="submit" value="Create New Pretzel" />
                     </Form>
-
-            
-
-
 
 
                 </div>
