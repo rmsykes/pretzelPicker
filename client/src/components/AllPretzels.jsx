@@ -53,7 +53,7 @@ export default class AllPretzels extends Component {
         const listOfRestaurants = this.state.listOfRestaurants.map(
             (restaurant) => {
                 return <div>
-                    <Link to={`/${restaurant._id}`}>
+                    <Link to={`/pretzel/${restaurant._id}`}>
                         <h5>{restaurant.restaurantName} {restaurant.ranking}/5</h5>
                     </Link>
                 </div>
