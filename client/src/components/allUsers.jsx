@@ -11,7 +11,7 @@ export default class AllUsers extends Component {
     state = {
         message: ''
     }
-    
+
 
     // componentDidMount()
     componentDidMount() {
@@ -25,8 +25,7 @@ export default class AllUsers extends Component {
     render() {
         return (
             <div>
-                {/* Accessing the value of message from the state object */}
-                <h1>{this.state.message}</h1>
+                <h1>Pretzel Pros</h1>
             </div>
         )
     }

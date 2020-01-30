@@ -10,15 +10,7 @@ export default class HomePage extends Component {
 
     // HomePage Component State
     state = {
-        listOfRestaurants: [],
-        newPretzel: {
-            restaurantName: String,
-            ranking: Number,
-            price: Number,
-            cheese: Boolean,
-            mustard: Boolean,
-            notes: String,
-        }
+        
     }
 
     // componentDidMount() - used to bring in data from backend, don't need data right now, but have it ready to pull in /api/pretzelPicker data but need to change state template
@@ -30,9 +22,6 @@ export default class HomePage extends Component {
     }
 
     
-
-    
-
     // Rendered in Browser
     render() {
 
