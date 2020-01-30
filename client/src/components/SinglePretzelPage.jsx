@@ -23,7 +23,7 @@ export default class SinglePretzel extends Component {
 
     // componentDidMount() - brings single pretzel data from backend
     componentDidMount() {
-        axios.get(`/api/pretzelPicker/${this.props.match.params.pretzelId}`)
+        axios.get(`/api/pretzel/${this.props.match.params.pretzelId}`)
             .then((res) => {
                 this.setState({ pretzel: res.data })
             })

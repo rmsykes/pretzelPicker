@@ -23,7 +23,7 @@ export default class HomePage extends Component {
 
     // componentDidMount() - used to bring in data from backend, don't need data right now, but have it ready to pull in /api/pretzelPicker data but need to change state template
     componentDidMount() {
-        axios.get('/api/pretzelPicker')
+        axios.get('/api/pretzel')
             .then((res) => {
                 this.setState({ listOfRestaurants: res.data })
             })
@@ -34,7 +34,7 @@ export default class HomePage extends Component {
         evt.preventDefault()
         const newPretzel = this.state.newPretzel
 
-        axios.post('/api/pretzelPicker', newPretzel)
+        axios.post('/api/pretzel', newPretzel)
             .then((res) => {
                 this.componentDidMount()
             })
