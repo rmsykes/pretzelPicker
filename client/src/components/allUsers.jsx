@@ -9,23 +9,39 @@ export default class AllUsers extends Component {
 
     // all user state
     state = {
-        message: ''
+        listOfUsers: [],
     }
 
 
     // componentDidMount()
     componentDidMount() {
-        axios.get('/api/helloworld')
+        axios.get('/api/user')
             .then((res) => {
-                this.setState({message: res.data})
+                this.setState({ listOfUsers: res.data })
             })
     }
 
     // render in browser
     render() {
+
+
+        const listOfUsers = this.state.listOfUsers.map(
+            (user) => {
+                return <div>
+                    <Link to={`/user/${user._id}`}>
+                        <h5>{user.name} {user.photo}</h5>
+                    </Link>
+                </div>
+            }
+        )
+
+
         return (
             <div>
                 <h1>Pretzel Pros</h1>
+
+                <h2>users</h2>
+                {listOfUsers}
             </div>
         )
     }
