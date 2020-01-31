@@ -1,4 +1,9 @@
 /* universal */
+.App {
+  background-color: blanchedalmond;
+
+}
+
 .pageHeader {
   display: flex;
 }
@@ -9,15 +14,15 @@
 }
 
 
+
 /* Home Page */
 
-.homePage {
-  background-color: blanchedalmond;
-}
+/* .homePage {
+} */
 
 .homePage h1 {
   text-align: center;
-  flex: 1.5;
+  margin: 35px;
 }
 
 
@@ -40,6 +45,7 @@
 .allPretzelsPage h1 {
   text-align: center;
   flex: 1.5;
+
 }
 
 
@@ -75,4 +81,20 @@
 
 
 
-/*  */
+/* All Users Page */
+
+.allUsersPage h1 {
+  text-align: center;
+  margin: 35px;
+}
+
+.allUsersUserListNameAndPhoto {
+  text-align: center;
+}
+
+.allUsersUserListNameAndPhoto img {
+   width: 100px;
+   border-radius: 25px;
+   box-shadow: 4px 4px black;
+   margin: 5px;
+ }

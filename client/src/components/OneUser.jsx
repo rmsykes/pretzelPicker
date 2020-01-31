@@ -7,36 +7,28 @@ import { Button, Form, FormControl, FormGroup, Input, FormCheck } from 'react-bo
 import { Navbar, Nav } from 'react-bootstrap'
 
 
-// create and export all users component
-export default class AllUsers extends Component {
+// create and export one user component
+export default class OneUsers extends Component {
 
     // all user state
     state = {
-        listOfUsers: [],
+        user: {
+            name: '',
+            photo: ''
+        },
     }
 
 
     // componentDidMount()
     componentDidMount() {
-        axios.get('/api/user')
+        axios.get(`/api/user/${this.props.match.params.userId}`)
             .then((res) => {
-                this.setState({ listOfUsers: res.data })
+                this.setState({ user: res.data })
             })
     }
 
     // render in browser
     render() {
-
-
-        const listOfUsers = this.state.listOfUsers.map(
-            (user) => {
-                return <div>
-                    <Link to={`/user/${user._id}`}>
-                        <h5 className='allUsersUserListNameAndPhoto'><img src={user.photo} alt="user's photo"/> <br/> {user.name} </h5>
-                    </Link>
-                </div>
-            }
-        )
 
 
         return (
@@ -57,9 +49,9 @@ export default class AllUsers extends Component {
                 </Navbar>
 
 
-                <h1>Pretzel People</h1>
+                <h1>{this.state.user.name}</h1>
 
-                {listOfUsers}
+                
             </div>
         )
     }

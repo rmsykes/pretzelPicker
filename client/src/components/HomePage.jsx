@@ -35,7 +35,7 @@ export default class HomePage extends Component {
                 <Navbar bg="dark" variant="dark">
                     <Navbar.Brand href="/">Pretzel Picker</Navbar.Brand>
                     <Nav className="mr-auto">
-                        <Nav.Link href="/users">Users</Nav.Link>
+                        <Nav.Link href="/user">Users</Nav.Link>
                         <Nav.Link href="#features">Features</Nav.Link>
                         <Nav.Link href="#pricing">Pricing</Nav.Link>
                     </Nav>
@@ -46,13 +46,8 @@ export default class HomePage extends Component {
                 </Navbar>
 
 
-                <div className='pageHeader'>
-                    <nav>
-                        <Link to='/'><button>Home</button></Link>
-                    </nav>
 
-
-                </div>
+            
                 <h1>Pretzel Picker</h1>
 
 
