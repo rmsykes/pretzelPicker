@@ -20,7 +20,6 @@ function App() {
           
           <Route exact path="/pretzel" component={AllPretzels}/>
           <Route exact path="/pretzel/:pretzelId" component={SinglePretzel}/>
-
         </Switch>
       </Router>
     </div>

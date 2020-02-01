@@ -31,8 +31,6 @@ export default class SinglePretzel extends Component {
 
 
 
-
-
     // Rendered in browser
     render() {
 
