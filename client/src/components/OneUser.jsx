@@ -42,7 +42,7 @@ export default class OneUsers extends Component {
 
     // getting pretzel data
     getPretzelData = () => {
-        axios.get('/api/pretzel')
+        axios.get(`/api/pretzel`)
             .then((res) => {
                 this.setState({ pretzelData: res.data })
             })
@@ -71,6 +71,16 @@ export default class OneUsers extends Component {
     render() {
 
 
+        const pretzelData = this.state.pretzelData.map(
+            (individualPretzelData) => {
+                    return <div>
+                        <h4>{individualPretzelData.restaurantName} {individualPretzelData.ranking}</h4>
+                    </div>
+            })
+
+
+
+
         return (
             <div className='allUsersPage'>
 
@@ -91,7 +101,9 @@ export default class OneUsers extends Component {
 
                 <h1>{this.state.user.name}</h1>
 
+                <h2>my pretzels</h2>
 
+                {pretzelData}
 
                 {/* CREATE PRETZEL FORM */}
                 <div className='createPretzelForm'>
