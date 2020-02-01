@@ -10,7 +10,8 @@ const PretzelSchema = new mongoose.Schema({
   cheese: Boolean,
   mustard: Boolean,
   ranking: Number,
-  notes: String
+  notes: String,
+  userId: String
 })
 
 // CREATE PRETZEL API

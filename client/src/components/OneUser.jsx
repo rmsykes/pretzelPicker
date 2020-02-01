@@ -24,6 +24,7 @@ export default class OneUsers extends Component {
             cheese: Boolean,
             mustard: Boolean,
             notes: String,
+            userId: String
         }
     }
 
