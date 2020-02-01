@@ -14,9 +14,10 @@ export default class OneUsers extends Component {
     state = {
         user: {
             name: '',
-            photo: ''
+            photo: '',
+            userId: '',
         },
-        pretzelData : [],
+        pretzelData: [],
         newPretzel: {
             restaurantName: String,
             ranking: Number,
@@ -35,7 +36,36 @@ export default class OneUsers extends Component {
             .then((res) => {
                 this.setState({ user: res.data })
             })
+        this.getPretzelData()
     }
+
+
+    // getting pretzel data
+    getPretzelData = () => {
+        axios.get('/api/pretzel')
+            .then((res) => {
+                this.setState({ pretzelData: res.data })
+            })
+    }
+
+    // createNewPretzel() on submit of form
+    createNewPretzel = (evt) => {
+        evt.preventDefault()
+        const newPretzel = this.state.newPretzel
+
+        axios.post('/api/pretzel', newPretzel)
+            .then((res) => {
+                this.componentDidMount()
+            })
+    }
+
+    // handleInputChange() on form inputs
+    handleInputChange = (evt) => {
+        const copiedNewPretzel = { ...this.state.newPretzel }
+        copiedNewPretzel[evt.target.name] = evt.target.value
+        this.setState({ newPretzel: copiedNewPretzel })
+    }
+
 
     // render in browser
     render() {
@@ -147,6 +177,19 @@ export default class OneUsers extends Component {
                         <br />
                         <br />
 
+
+                        <input className='userFieldToHide'
+                            type='string'
+                            name='userId'
+                            placeholder={this.state.user.name}
+                            // onChange={this.handleInputChange}
+                            value={this.props.match.params.userId}
+
+                        />
+
+
+                        <br />
+                        <br />
                         <input type="submit" value="Create New Pretzel" />
                     </Form>
                 </div>

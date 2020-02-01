@@ -29,6 +29,9 @@ export default class AllPretzels extends Component {
             })
     }
 
+
+
+
     // createNewPretzel() on submit of form
     createNewPretzel = (evt) => {
         evt.preventDefault()
