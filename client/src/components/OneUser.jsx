@@ -25,6 +25,7 @@ export default class OneUsers extends Component {
             cheese: Boolean,
             mustard: Boolean,
             notes: String,
+            photo: String,
             userId: String
         }
     }
@@ -72,20 +73,28 @@ export default class OneUsers extends Component {
     render() {
 
 
+
+        // if (this.state.pretzelData.userId === this.state.user.userId) {
+
+        // }
+
+
         const pretzelData = this.state.pretzelData.map(
             (individualPretzelData) => {
                 return <div>
-                    <h4>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h4>
-                </div>
+                    <Link to={`/pretzel/${individualPretzelData._id}`}>
+                        <h5>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h5>
+                    </Link>
+                </div >
             })
 
 
 
         return (
-            <div className='oneUsersPage'>
+            <div className='oneUsersPage' >
 
                 {/* Bootstratp nav bar */}
-                <Navbar bg="dark" variant="dark">
+                < Navbar bg="dark" variant="dark" >
                     <Navbar.Brand href="/">Pretzel Picker</Navbar.Brand>
                     <Nav className="mr-auto">
                         <Nav.Link href="/user">Users</Nav.Link>
@@ -108,7 +117,10 @@ export default class OneUsers extends Component {
 
                 </div>
 
-                {pretzelData}
+                <div className='oneUserPretzelList'>
+
+                    {pretzelData}
+                </div>
 
                 {/* CREATE PRETZEL FORM */}
                 <div className='createPretzelForm'>
@@ -165,6 +177,15 @@ export default class OneUsers extends Component {
                         </select>
 
 
+                        <h2>Pretzel Photo</h2>
+                        <input
+                            type="string"
+                            name="photo"
+                            placeholder="Pretzel Photo URL"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.photo} />
+
+
                         <h2>Notes</h2>
                         <input
                             type="string"
@@ -194,7 +215,7 @@ export default class OneUsers extends Component {
                 </div>
 
 
-            </div>
+            </div >
         )
     }
 }

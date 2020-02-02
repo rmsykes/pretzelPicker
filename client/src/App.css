@@ -96,6 +96,10 @@
    margin: 5px;
  }
 
+ .singlePretzelPagePhoto {
+   width: 200px;
+ }
+
 
  /* single user page */
  /* hiding the input for the user in the create pretzel form */
@@ -123,3 +127,9 @@
   text-align: center;
   margin: 100px;
 }
+
+.oneUserPretzelList {
+  text-align: center;
+}
+
+

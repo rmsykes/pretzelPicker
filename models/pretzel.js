@@ -11,6 +11,7 @@ const PretzelSchema = new mongoose.Schema({
   mustard: Boolean,
   ranking: Number,
   notes: String,
+  photo: String,
   userId: String
 })
 
