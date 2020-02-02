@@ -48,6 +48,7 @@ export default class OneUsers extends Component {
             })
     }
 
+
     // createNewPretzel() on submit of form
     createNewPretzel = (evt) => {
         evt.preventDefault()
@@ -73,16 +74,15 @@ export default class OneUsers extends Component {
 
         const pretzelData = this.state.pretzelData.map(
             (individualPretzelData) => {
-                    return <div>
-                        <h4>{individualPretzelData.restaurantName} {individualPretzelData.ranking}</h4>
-                    </div>
+                return <div>
+                    <h4>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h4>
+                </div>
             })
 
 
 
-
         return (
-            <div className='allUsersPage'>
+            <div className='oneUsersPage'>
 
                 {/* Bootstratp nav bar */}
                 <Navbar bg="dark" variant="dark">
@@ -98,10 +98,15 @@ export default class OneUsers extends Component {
                     </Form>
                 </Navbar>
 
+                <div className='oneUserPageHeader'>
+                    <img src={this.state.user.photo} alt="user's photo" />
+                    <h1>{this.state.user.name}</h1>
+                </div>
 
-                <h1>{this.state.user.name}</h1>
+                <div className='oneUserPretzelArea'>
+                    <h2>My Pretzels</h2>
 
-                <h2>my pretzels</h2>
+                </div>
 
                 {pretzelData}
 
@@ -136,47 +141,29 @@ export default class OneUsers extends Component {
                             value={this.state.newPretzel.price} />
 
                         <h2>Cheese</h2>
-                        {/* <input
-                            type="checkbox"
+                        <select
+                            type="select"
                             name="cheese"
                             placeholder="Select True/False"
                             onChange={this.handleInputChange}
-                            value={this.state.newPretzel.cheese} /> */}
-                        {['checkbox'].map(type => (
-                            <div key={`custom-${type}-1`} className="mb-3">
-                                <Form.Check
-                                    custom
-                                    type={type}
-                                    id={`custom-${type}-1`}
-                                    label=""
-                                    name="cheese"
-                                    onChange={this.handleInputChange}
-                                    value={this.state.newPretzel.cheese}
-                                />
-                            </div>
-                        ))}
+                            value={this.state.newPretzel.cheese}>
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+
+
 
                         <h2>Mustard</h2>
-                        {/* <input
+                        <select
                             type="checkbox"
                             name="mustard"
                             placeholder="Select True/False"
                             onChange={this.handleInputChange}
-                            value={this.state.newPretzel.mustard} /> */}
-                        {['checkbox'].map(type => (
-                            <div key={`custom-${type}-2`} className="mb-4">
-                                <Form.Check
-                                    custom
-                                    type={type}
-                                    id={`custom-${type}-2`}
-                                    label=""
-                                    name="mustard"
-                                    onChange={this.handleInputChange}
-                                    value={this.state.newPretzel.mustard}
+                            value={this.state.newPretzel.mustard}>
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
 
-                                />
-                            </div>
-                        ))}
 
                         <h2>Notes</h2>
                         <input

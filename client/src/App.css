@@ -59,9 +59,6 @@
   text-align: center;
 }
 
-.createPretzelForm {
-  text-align: center;
-}
 
 
 /* Single Pretzel Page */
@@ -105,3 +102,24 @@
  .userFieldToHide {
    display: none;
  }
+
+ .oneUserPageHeader {
+    text-align: center;
+    margin: 30px;
+ }
+
+
+ .oneUserPageHeader img {
+  width: 200px;
+  border-radius: 25px;
+  text-align: center;
+ }
+
+ .oneUserPretzelArea h2 {
+    text-align: center;
+ }
+
+ .createPretzelForm {
+  text-align: center;
+  margin: 100px;
+}
