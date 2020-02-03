@@ -31,7 +31,7 @@ export default class OneUsers extends Component {
     }
 
 
-    // componentDidMount()
+    // componentDidMount() - gets this user's info and sets it to state as well as all pretzel info
     componentDidMount() {
         axios.get(`/api/user/${this.props.match.params.userId}`)
             .then((res) => {
@@ -41,7 +41,7 @@ export default class OneUsers extends Component {
     }
 
 
-    // getting pretzel data
+    // gets all pretzel data
     getPretzelData = () => {
         axios.get(`/api/pretzel`)
             .then((res) => {
@@ -80,9 +80,10 @@ export default class OneUsers extends Component {
 
 
         const pretzelData = this.state.pretzelData.map(
-            (individualPretzelData) => {
+            (individualPretzelData) => {       
                 return <div>
                     <Link to={`/pretzel/${individualPretzelData._id}`}>
+                        
                         <h5>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h5>
                     </Link>
                 </div >

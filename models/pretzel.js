@@ -34,7 +34,7 @@ const getOnePretzel = (pretzelId) => {
 
 // getAllPretzelsByUserId()
 const getAllPretzelsByUserId = (userId) => {
-  return PretzelCollection.find({})
+  return PretzelCollection.find({ userId: userId })
 }
 
 // createPretzel()
@@ -49,7 +49,7 @@ const updatePretzel = (pretzelId, pretzelData) => {
 
 // deletePretzel()
 const deletePretzel = (pretzelId) => {
-  return PretzelCollection.deleteOne({ _id: pretzelId})
+  return PretzelCollection.deleteOne({ _id: pretzelId })
 }
 
 
@@ -57,6 +57,7 @@ const deletePretzel = (pretzelId) => {
 module.exports = {
   getAllPretzels,
   getOnePretzel,
+  getAllPretzelsByUserId,
   createPretzel,
   updatePretzel,
   deletePretzel

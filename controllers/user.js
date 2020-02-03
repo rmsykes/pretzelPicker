@@ -1,8 +1,9 @@
 // import express
 const express = require('express')
 
-// import user api from model
+// import user and year api from model
 const UserApi = require('../models/user.js')
+const PretzelApi = require('../models/pretzel.js')
 
 // user router
 const UserRouter = express.Router()
@@ -24,6 +25,19 @@ UserRouter.get('/:userId', (req, res) => {
       res.json(singleUser)
     })
 })
+
+
+// getOneUser() with getAllPretzelsByUserId()
+// UserRouter.get('/:userId', (req, res) => {
+//   UserApi.getOneUser(req.params.userId)
+//     .then((singleUser) => {
+
+//       PretzelApi.getAllPretzelsByUserId(req.params.userId)
+//         .then((usersPretzels) => {
+//         res.json(singleUser, usersPretzels)
+
+//       })
+// })
 
 // createUser()
 UserRouter.post('/', (req, res) => {

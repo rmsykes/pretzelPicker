@@ -15,6 +15,12 @@ PretzelRouter.get('/', (req, res) => {
   PretzelApi.getAllPretzels()
     .then((allPretzels) => {
       res.json(allPretzels)
+
+      // where should i put this code?
+      // PretzelApi.getAllPretzelsByUserId(req.params.userId)
+      //   .then(oneUsersPretzels)
+      //   res.json(oneUsersPretzels)
+
     })
 })
 
