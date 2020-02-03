@@ -72,24 +72,36 @@ export default class OneUsers extends Component {
     // render in browser
     render() {
 
+        
+        const arrayOfPretzlsWithUserId = []
+        for (let i = 0; i < this.state.pretzelData.length; i++) {
+            if (this.state.pretzelData.userId === this.state.user.userId) {
+                arrayOfPretzlsWithUserId.push(pretzelData[i])
+            }
+        }
 
-
-        // if (this.state.pretzelData.userId === this.state.user.userId) {
-
-        // }
-
-
-        const pretzelData = this.state.pretzelData.map(
-            (individualPretzelData) => {       
+        const pretzelData = arrayOfPretzlsWithUserId.map(
+            (individualPretzelData) => {
                 return <div>
                     <Link to={`/pretzel/${individualPretzelData._id}`}>
-                        
+
                         <h5>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h5>
                     </Link>
                 </div >
             })
 
 
+        // const pretzelData = this.state.pretzelData.map(
+        //     (individualPretzelData) => {
+        //         return <div>
+        //             <Link to={`/pretzel/${individualPretzelData._id}`}>
+
+        //                 <h5>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h5>
+        //             </Link>
+        //         </div >
+        //     })
+
+        
 
         return (
             <div className='oneUsersPage' >
