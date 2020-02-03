@@ -21,8 +21,8 @@ export default class SinglePretzel extends Component {
             photo: String,
             notes: String,
         },
-
     }
+
 
     // componentDidMount() - brings single pretzel data from backend
     componentDidMount() {
@@ -31,7 +31,6 @@ export default class SinglePretzel extends Component {
                 this.setState({ pretzel: res.data })
             })
     }
-
 
 
     // Rendered in browser

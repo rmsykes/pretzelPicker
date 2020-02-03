@@ -32,6 +32,11 @@ const getOnePretzel = (pretzelId) => {
   return PretzelCollection.findById(pretzelId)
 }
 
+// getAllPretzelsByUserId()
+const getAllPretzelsByUserId = (userId) => {
+  return PretzelCollection.find({})
+}
+
 // createPretzel()
 const createPretzel = (pretzelData) => {
   return PretzelCollection.create(pretzelData)
