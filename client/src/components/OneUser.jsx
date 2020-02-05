@@ -28,7 +28,8 @@ export default class OneUsers extends Component {
             notes: String,
             photo: String,
             userId: String
-        }
+        },
+        isHidden: true
     }
 
 
@@ -72,93 +73,16 @@ export default class OneUsers extends Component {
     }
 
 
-    // render in browser
-    render() {
+    // toggles seeing create form with create form button
+    toggleHidden = () => {
+        this.setState({
+            isHidden: !this.state.isHidden
+        })
+    }
 
-
-        // const arrayOfPretzlsWithUserId = []
-        // for (let i = 0; i < this.state.pretzelData.length; i++) {
-        //     if (this.state.pretzelData.userId === this.state.user.userId) {
-        //         arrayOfPretzlsWithUserId.push(pretzelData[i])
-        //     }
-        // }
-
-        // const pretzelData = arrayOfPretzlsWithUserId.map(
-        //     (individualPretzelData) => {
-        //         return <div>
-        //             <Link to={`/pretzel/${individualPretzelData._id}`}>
-
-        //                 <h5>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h5>
-        //             </Link>
-        //         </div >
-        //     })
-
-
-        // const pretzelData = this.state.pretzelData.map(
-        //     (individualPretzelData) => {
-        //         return <div>
-        //             <Link to={`/pretzel/${individualPretzelData._id}`}>
-
-        //                 <h5>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h5>
-        //             </Link>
-        //         </div >
-        //     })
-
-        // render below for list of all pretzel
-        // {pretzelData}
-
-        console.log(this.state.pretzelData)
-
-        const filterPretzelByUserId = this.state.pretzelData.filter((singlePretzelData) => singlePretzelData.userId === this.props.match.params.userId)
-        console.log(filterPretzelByUserId)
-        const pretzelDataWithUserId = filterPretzelByUserId.map(
-            (individualPretzelData) => {
-                return <div>
-                    <Link to={`/pretzel/${individualPretzelData._id}`}>
-
-                        <h5>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h5>
-                    </Link>
-                </div>
-            }
-        )
-
-
-
-
+    childForm = () => {
         return (
-            <div className='oneUsersPage' >
-
-                {/* Bootstratp nav bar */}
-                < Navbar bg="dark" variant="dark" >
-                    <Navbar.Brand href="/">Pretzel Picker</Navbar.Brand>
-                    <Nav className="mr-auto">
-                        <Nav.Link href="/user">Users</Nav.Link>
-
-                    </Nav>
-                    {/* <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button variant="outline-info">Search</Button>
-                    </Form> */}
-                </Navbar>
-
-                <div className='oneUserPageHeader'>
-                    <img src={this.state.user.photo} alt="user's photo" />
-                    <h1>{this.state.user.name}</h1>
-                </div>
-
-                <div className='oneUserPretzelArea'>
-                    <h2>My Pretzels</h2>
-
-                </div>
-
-                <div className='oneUserPretzelList'>
-
-                    {pretzelDataWithUserId}
-
-                </div>
-
-                {/* CREATE PRETZEL FORM */}
-                <div className='createPretzelForm'>
+            <div className='createPretzelForm'>
                     <Form onSubmit={this.createNewPretzel}>
                         <h1>Create New Pretzel</h1>
 
@@ -234,6 +158,140 @@ export default class OneUsers extends Component {
                         <input type="submit" value="Create New Pretzel" />
                     </Form>
                 </div>
+        )
+    }
+    
+    // render in browser
+    render() {
+
+        // FILTER THROUGH ALL PRETZEL INFO AND CHECK THE USERID WITH THE USER'S ID PULLED IN FROM THE URL!!!!
+        const filterPretzelByUserId = this.state.pretzelData.filter((singlePretzelData) => singlePretzelData.userId === this.props.match.params.userId)
+        const pretzelDataWithUserId = filterPretzelByUserId.map(
+            (individualPretzelData) => {
+                return <div>
+                    <Link to={`/pretzel/${individualPretzelData._id}`}>
+
+                        <h5>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h5>
+                    </Link>
+                </div>
+            }
+        )
+
+
+
+        return (
+            <div className='oneUsersPage' >
+
+                {/* Bootstrap nav bar */}
+                < Navbar bg="dark" variant="dark" >
+                    <Navbar.Brand href="/">Pretzel Picker</Navbar.Brand>
+                    <Nav className="mr-auto">
+                        <Nav.Link href="/user">Users</Nav.Link>
+
+                    </Nav>
+                    {/* <Form inline>
+                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                        <Button variant="outline-info">Search</Button>
+                    </Form> */}
+                </Navbar>
+
+                <div className='oneUserPageHeader'>
+                    <img src={this.state.user.photo} alt="user's photo" />
+                    <h1>{this.state.user.name}</h1>
+                </div>
+
+                <div className='oneUserPretzelArea'>
+                    <h2>My Pretzels</h2>
+
+                </div>
+
+                <div className='oneUserPretzelList'>
+
+                    {/* FILTERED PRETZEL LIST */}
+                    {pretzelDataWithUserId}
+
+                </div>
+
+                {/* CREATE PRETZEL FORM
+                <div className='createPretzelForm'>
+                    <Form onSubmit={this.createNewPretzel}>
+                        <h1>Create New Pretzel</h1>
+
+
+                        <h2>Restaurant Name</h2>
+                        <input
+                            type="string"
+                            name="restaurantName"
+                            placeholder="Restaurant Name"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.restaurantName} />
+
+                        <h2>Ranking</h2>
+                        <input
+                            type="number"
+                            name="ranking"
+                            placeholder="Pretzel Ranking"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.ranking} />
+
+                        <h2>Price</h2>
+                        <input
+                            type="number"
+                            name="price"
+                            placeholder="Price"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.price} />
+
+                        <h2>Cheese</h2>
+                        <select
+                            type="select"
+                            name="cheese"
+                            placeholder="Select True/False"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.cheese}>
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+
+
+
+                        <h2>Mustard</h2>
+                        <select
+                            type="checkbox"
+                            name="mustard"
+                            placeholder="Select True/False"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.mustard}>
+                            <option value="false">No</option>
+                            <option value="true">Yes</option>
+                        </select>
+
+
+                        <h2>Pretzel Photo</h2>
+                        <input
+                            type="string"
+                            name="photo"
+                            placeholder="Pretzel Photo URL"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.photo} />
+
+
+                        <h2>Notes</h2>
+                        <input
+                            type="string"
+                            name="notes"
+                            placeholder="Pretzel Notes"
+                            onChange={this.handleInputChange}
+                            value={this.state.newPretzel.notes} />
+
+                        <br />
+                        <br />
+                        <input type="submit" value="Create New Pretzel" />
+                    </Form>
+                </div> */}
+
+                <button className='createNewPretzelToggleFormButton' onClick={this.toggleHidden}>Create New Pretzel</button>
+                {this.state.isHidden === false ? this.childForm() : null}
 
 
             </div >
