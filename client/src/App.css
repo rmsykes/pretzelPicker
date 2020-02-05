@@ -102,10 +102,6 @@
 
 
  /* single user page */
- /* hiding the input for the user in the create pretzel form */
- /* .userFieldToHide {
-   display: none;
- } */
 
  .oneUserPageHeader {
     text-align: center;
@@ -125,11 +121,16 @@
 
  .createPretzelForm {
   text-align: center;
-  margin: 100px;
+  margin: 35px auto;
 }
 
 .oneUserPretzelList {
   text-align: center;
 }
 
+.createNewPretzelToggleFormButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
 

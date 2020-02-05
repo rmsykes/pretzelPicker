@@ -83,84 +83,83 @@ export default class OneUsers extends Component {
     childForm = () => {
         return (
             <div className='createPretzelForm'>
-                    <Form onSubmit={this.createNewPretzel}>
-                        <h1>Create New Pretzel</h1>
+                <Form onSubmit={this.createNewPretzel}>
+                    <h1>Create New Pretzel</h1>
 
 
-                        <h2>Restaurant Name</h2>
-                        <input
-                            type="string"
-                            name="restaurantName"
-                            placeholder="Restaurant Name"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.restaurantName} />
+                    <h2>Restaurant Name</h2>
+                    <input
+                        type="string"
+                        name="restaurantName"
+                        placeholder="Restaurant Name"
+                        onChange={this.handleInputChange}
+                        value={this.state.newPretzel.restaurantName} />
 
-                        <h2>Ranking</h2>
-                        <input
-                            type="number"
-                            name="ranking"
-                            placeholder="Pretzel Ranking"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.ranking} />
+                    <h2>Ranking</h2>
+                    <input
+                        type="number"
+                        name="ranking"
+                        placeholder="Pretzel Ranking"
+                        onChange={this.handleInputChange}
+                        value={this.state.newPretzel.ranking} />
 
-                        <h2>Price</h2>
-                        <input
-                            type="number"
-                            name="price"
-                            placeholder="Price"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.price} />
+                    <h2>Price</h2>
+                    <input
+                        type="number"
+                        name="price"
+                        placeholder="Price"
+                        onChange={this.handleInputChange}
+                        value={this.state.newPretzel.price} />
 
-                        <h2>Cheese</h2>
-                        <select
-                            type="select"
-                            name="cheese"
-                            placeholder="Select True/False"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.cheese}>
-                            <option value="false">No</option>
-                            <option value="true">Yes</option>
-                        </select>
-
-
-
-                        <h2>Mustard</h2>
-                        <select
-                            type="checkbox"
-                            name="mustard"
-                            placeholder="Select True/False"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.mustard}>
-                            <option value="false">No</option>
-                            <option value="true">Yes</option>
-                        </select>
+                    <h2>Cheese</h2>
+                    <select
+                        type="select"
+                        name="cheese"
+                        placeholder="Select True/False"
+                        onChange={this.handleInputChange}
+                        value={this.state.newPretzel.cheese}>
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                    </select>
 
 
-                        <h2>Pretzel Photo</h2>
-                        <input
-                            type="string"
-                            name="photo"
-                            placeholder="Pretzel Photo URL"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.photo} />
+                    <h2>Mustard</h2>
+                    <select
+                        type="checkbox"
+                        name="mustard"
+                        placeholder="Select True/False"
+                        onChange={this.handleInputChange}
+                        value={this.state.newPretzel.mustard}>
+                        <option value="false">No</option>
+                        <option value="true">Yes</option>
+                    </select>
 
 
-                        <h2>Notes</h2>
-                        <input
-                            type="string"
-                            name="notes"
-                            placeholder="Pretzel Notes"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.notes} />
+                    <h2>Pretzel Photo</h2>
+                    <input
+                        type="string"
+                        name="photo"
+                        placeholder="Pretzel Photo URL"
+                        onChange={this.handleInputChange}
+                        value={this.state.newPretzel.photo} />
 
-                        <br />
-                        <br />
-                        <input type="submit" value="Create New Pretzel" />
-                    </Form>
-                </div>
+
+                    <h2>Notes</h2>
+                    <input
+                        type="string"
+                        name="notes"
+                        placeholder="Pretzel Notes"
+                        onChange={this.handleInputChange}
+                        value={this.state.newPretzel.notes} />
+
+                    <br />
+                    <br />
+                    <input type="submit" value="Create New Pretzel" />
+                </Form>
+            </div>
         )
     }
-    
+
     // render in browser
     render() {
 
@@ -212,85 +211,10 @@ export default class OneUsers extends Component {
 
                 </div>
 
-                {/* CREATE PRETZEL FORM
-                <div className='createPretzelForm'>
-                    <Form onSubmit={this.createNewPretzel}>
-                        <h1>Create New Pretzel</h1>
-
-
-                        <h2>Restaurant Name</h2>
-                        <input
-                            type="string"
-                            name="restaurantName"
-                            placeholder="Restaurant Name"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.restaurantName} />
-
-                        <h2>Ranking</h2>
-                        <input
-                            type="number"
-                            name="ranking"
-                            placeholder="Pretzel Ranking"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.ranking} />
-
-                        <h2>Price</h2>
-                        <input
-                            type="number"
-                            name="price"
-                            placeholder="Price"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.price} />
-
-                        <h2>Cheese</h2>
-                        <select
-                            type="select"
-                            name="cheese"
-                            placeholder="Select True/False"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.cheese}>
-                            <option value="false">No</option>
-                            <option value="true">Yes</option>
-                        </select>
-
-
-
-                        <h2>Mustard</h2>
-                        <select
-                            type="checkbox"
-                            name="mustard"
-                            placeholder="Select True/False"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.mustard}>
-                            <option value="false">No</option>
-                            <option value="true">Yes</option>
-                        </select>
-
-
-                        <h2>Pretzel Photo</h2>
-                        <input
-                            type="string"
-                            name="photo"
-                            placeholder="Pretzel Photo URL"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.photo} />
-
-
-                        <h2>Notes</h2>
-                        <input
-                            type="string"
-                            name="notes"
-                            placeholder="Pretzel Notes"
-                            onChange={this.handleInputChange}
-                            value={this.state.newPretzel.notes} />
-
-                        <br />
-                        <br />
-                        <input type="submit" value="Create New Pretzel" />
-                    </Form>
-                </div> */}
-
-                <button className='createNewPretzelToggleFormButton' onClick={this.toggleHidden}>Create New Pretzel</button>
+                <div className='createNewPretzelToggleFormButton'>
+                    {/* button that toggles the create pretzel form. */}
+                    <button  onClick={this.toggleHidden}>Create New Pretzel</button>
+                </div>
                 {this.state.isHidden === false ? this.childForm() : null}
 
 
