@@ -46,6 +46,18 @@ export default class SinglePretzel extends Component {
     // Rendered in browser
     render() {
 
+        // variable and if statement are for rendering if theres cheese, show yes, if not show no
+        let isThereCheese = ''
+        if (this.state.pretzel.cheese === true){
+            isThereCheese = ' yes'
+        } else isThereCheese = ' no'
+
+        // variable and if statement are for rendering if theres mustard, show yes, if not show no
+        let isThereMustard = ''
+        if (this.state.pretzel.mustard === true){
+            isThereMustard = ' yes'
+        } else isThereMustard = ' no'
+
 
         return (
 
@@ -74,8 +86,8 @@ export default class SinglePretzel extends Component {
                     <h2>{this.state.pretzel.restaurantName} </h2>
                     <h2>Rank: {this.state.pretzel.ranking}/5</h2>
                     <h2>${this.state.pretzel.price}</h2>
-                    <h2>Cheese:{this.state.pretzel.cheese}</h2>
-                    <h2>Mustard:{this.state.pretzel.mustard}</h2>
+                    <h2>Cheese:{isThereCheese}</h2>
+                    <h2>Mustard:{isThereMustard}</h2>
                     <h2>Photo: <img className='singlePretzelPagePhoto' src={this.state.pretzel.photo} alt="pretzel photo" /></h2>
                     <h2>Notes: {this.state.pretzel.notes}</h2>
 
