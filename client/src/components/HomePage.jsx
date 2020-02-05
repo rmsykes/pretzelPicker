@@ -54,7 +54,11 @@ export default class HomePage extends Component {
 
 
 
+                <div className='homePageCreateUserArea'>
+                        
+                </div>
 
+                
 
 
             </div>

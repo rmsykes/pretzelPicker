@@ -97,7 +97,7 @@ export default class SinglePretzel extends Component {
                     </div>
 
                     <div className='singlePretzelPagePretzelNotes'>
-                        <h2>Notes: {this.state.pretzel.notes}</h2>
+                        <h2>Notes: <br/> {this.state.pretzel.notes}</h2>
                     </div>
 
 
