@@ -22,7 +22,7 @@
 
 .homePage h1 {
   text-align: center;
-  margin: 35px;
+  margin: 35px auto;
 }
 
 
@@ -45,9 +45,7 @@
 .allPretzelsPage h1 {
   text-align: center;
   flex: 1.5;
-
 }
-
 
 .allPretzelsPageSiteExplanation {
   margin: 35px 200px;
@@ -67,22 +65,31 @@
 
 }
 
+.singlePretzelPage h1 {
+  margin: 35px auto;
+}
+
+
 .singlePretzelPage {
   text-align: center;
-  flex: 1.5;
 }
 
-.singlePretzelPagePretzelInfo {
-  margin: 50px;
+.singlePretzelPagePretzelBody {
+  display: flex;
+  justify-content: space-evenly;
 }
 
+.singlePretzelPagePhoto {
+  width: 200px;
+  border-radius: 25px;
+}
 
 
 /* All Users Page */
 
 .allUsersPage h1 {
   text-align: center;
-  margin: 35px;
+  margin: 35px auto;
 }
 
 .allUsersUserListNameAndPhoto {
@@ -96,10 +103,7 @@
    margin: 5px;
  }
 
- .singlePretzelPagePhoto {
-   width: 200px;
- }
-
+ 
 
  /* single user page */
 
@@ -107,7 +111,6 @@
     text-align: center;
     margin: 30px;
  }
-
 
  .oneUserPageHeader img {
   width: 200px;
