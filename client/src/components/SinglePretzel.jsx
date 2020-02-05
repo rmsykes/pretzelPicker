@@ -1,7 +1,7 @@
 // Import React, { Component }, Axios, and { Link }
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 import { Button, Form, FormControl, FormGroup, Input, FormCheck } from 'react-bootstrap'
 import { Navbar, Nav } from 'react-bootstrap'
@@ -22,11 +22,12 @@ export default class SinglePretzel extends Component {
             notes: String,
             userId: String
         },
+        isRedirect: false
     }
 
 
     // componentDidMount() - brings single pretzel data from backend
-    componentDidMount() {
+    componentDidMount = () => {
         axios.get(`/api/pretzel/${this.props.match.params.pretzelId}`)
             .then((res) => {
                 this.setState({ pretzel: res.data })
@@ -34,11 +35,25 @@ export default class SinglePretzel extends Component {
     }
 
 
+    //  deletes pretzel on click of delete pretzel button
+    deletePretzel = () => {
+        axios.delete(`/api/pretzel/${this.props.match.params.pretzelId}`)
+            .then((res) => {
+                this.setState({ isRedirect: true })
+            })
+    }
+
     // Rendered in browser
     render() {
 
 
         return (
+
+            
+
+            this.state.isRedirect ? <Redirect to="/user" /> :
+
+
             <div className='singlePretzelPage'>
 
                 <div>
@@ -65,6 +80,8 @@ export default class SinglePretzel extends Component {
                     <h2>Notes: {this.state.pretzel.notes}</h2>
 
                 </div>
+
+                <button id='deletePretzelButton' onClick={() => this.deletePretzel()}>Delete This Pretzel</button>
 
 
             </div>
