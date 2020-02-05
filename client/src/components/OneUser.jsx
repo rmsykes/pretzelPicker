@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import {Form} from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
 // import { Button, FormControl, FormGroup, Input, FormCheck } from 'react-bootstrap'
 
 import { Navbar, Nav } from 'react-bootstrap'
@@ -54,6 +54,8 @@ export default class OneUsers extends Component {
     // createNewPretzel() on submit of form
     createNewPretzel = (evt) => {
         evt.preventDefault()
+        // assigns the userid pulled in from url to the state of newPretzel.userId
+        this.state.newPretzel.userId = this.props.match.params.userId
         const newPretzel = this.state.newPretzel
 
         axios.post('/api/pretzel', newPretzel)
@@ -105,7 +107,7 @@ export default class OneUsers extends Component {
         // render below for list of all pretzel
         // {pretzelData}
 
-console.log(this.state.pretzelData)
+        console.log(this.state.pretzelData)
 
         const filterPretzelByUserId = this.state.pretzelData.filter((singlePretzelData) => singlePretzelData._id === this.state.user.userId)
         // console.log(filterPretzelByUserId)
@@ -231,14 +233,13 @@ console.log(this.state.pretzelData)
                         <br />
 
 
-                        <input className='userFieldToHide'
+                        {/* <input className='userFieldToHide'
                             type='string'
                             name='userId'
-                            // placeholder={this.state.user.name}
-                            // onChange={this.handleInputChange}
-                            value={this.props.match.params.userId}
-
-                        />
+                            placeholder={this.state.user.name}
+                            onChange={this.handleInputChange}
+                            value={this.props.match.params.userId}/> */}
+                        
 
 
                         <br />
