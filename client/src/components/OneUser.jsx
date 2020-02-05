@@ -109,8 +109,8 @@ export default class OneUsers extends Component {
 
         console.log(this.state.pretzelData)
 
-        const filterPretzelByUserId = this.state.pretzelData.filter((singlePretzelData) => singlePretzelData._id === this.state.user.userId)
-        // console.log(filterPretzelByUserId)
+        const filterPretzelByUserId = this.state.pretzelData.filter((singlePretzelData) => singlePretzelData.userId === this.props.match.params.userId)
+        console.log(filterPretzelByUserId)
         const pretzelDataWithUserId = filterPretzelByUserId.map(
             (individualPretzelData) => {
                 return <div>
@@ -228,19 +228,6 @@ export default class OneUsers extends Component {
                             placeholder="Pretzel Notes"
                             onChange={this.handleInputChange}
                             value={this.state.newPretzel.notes} />
-
-                        <br />
-                        <br />
-
-
-                        {/* <input className='userFieldToHide'
-                            type='string'
-                            name='userId'
-                            placeholder={this.state.user.name}
-                            onChange={this.handleInputChange}
-                            value={this.props.match.params.userId}/> */}
-                        
-
 
                         <br />
                         <br />
