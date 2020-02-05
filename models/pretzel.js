@@ -12,7 +12,7 @@ const PretzelSchema = new mongoose.Schema({
   ranking: Number,
   notes: String,
   photo: String,
-  userId: String
+  userId: mongoose.Types.ObjectId
 })
 
 // CREATE PRETZEL API

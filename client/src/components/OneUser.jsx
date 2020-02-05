@@ -2,7 +2,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { Button, Form, FormControl, FormGroup, Input, FormCheck } from 'react-bootstrap'
+import {Form} from 'react-bootstrap'
+// import { Button, FormControl, FormGroup, Input, FormCheck } from 'react-bootstrap'
 
 import { Navbar, Nav } from 'react-bootstrap'
 
@@ -72,23 +73,23 @@ export default class OneUsers extends Component {
     // render in browser
     render() {
 
-        
-        const arrayOfPretzlsWithUserId = []
-        for (let i = 0; i < this.state.pretzelData.length; i++) {
-            if (this.state.pretzelData.userId === this.state.user.userId) {
-                arrayOfPretzlsWithUserId.push(pretzelData[i])
-            }
-        }
 
-        const pretzelData = arrayOfPretzlsWithUserId.map(
-            (individualPretzelData) => {
-                return <div>
-                    <Link to={`/pretzel/${individualPretzelData._id}`}>
+        // const arrayOfPretzlsWithUserId = []
+        // for (let i = 0; i < this.state.pretzelData.length; i++) {
+        //     if (this.state.pretzelData.userId === this.state.user.userId) {
+        //         arrayOfPretzlsWithUserId.push(pretzelData[i])
+        //     }
+        // }
 
-                        <h5>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h5>
-                    </Link>
-                </div >
-            })
+        // const pretzelData = arrayOfPretzlsWithUserId.map(
+        //     (individualPretzelData) => {
+        //         return <div>
+        //             <Link to={`/pretzel/${individualPretzelData._id}`}>
+
+        //                 <h5>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h5>
+        //             </Link>
+        //         </div >
+        //     })
 
 
         // const pretzelData = this.state.pretzelData.map(
@@ -101,7 +102,26 @@ export default class OneUsers extends Component {
         //         </div >
         //     })
 
-        
+        // render below for list of all pretzel
+        // {pretzelData}
+
+console.log(this.state.pretzelData)
+
+        const filterPretzelByUserId = this.state.pretzelData.filter((singlePretzelData) => singlePretzelData._id === this.state.user.userId)
+        // console.log(filterPretzelByUserId)
+        const pretzelDataWithUserId = filterPretzelByUserId.map(
+            (individualPretzelData) => {
+                return <div>
+                    <Link to={`/pretzel/${individualPretzelData._id}`}>
+
+                        <h5>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h5>
+                    </Link>
+                </div>
+            }
+        )
+
+
+
 
         return (
             <div className='oneUsersPage' >
@@ -111,13 +131,12 @@ export default class OneUsers extends Component {
                     <Navbar.Brand href="/">Pretzel Picker</Navbar.Brand>
                     <Nav className="mr-auto">
                         <Nav.Link href="/user">Users</Nav.Link>
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+
                     </Nav>
-                    <Form inline>
+                    {/* <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                         <Button variant="outline-info">Search</Button>
-                    </Form>
+                    </Form> */}
                 </Navbar>
 
                 <div className='oneUserPageHeader'>
@@ -132,7 +151,8 @@ export default class OneUsers extends Component {
 
                 <div className='oneUserPretzelList'>
 
-                    {pretzelData}
+                    {pretzelDataWithUserId}
+
                 </div>
 
                 {/* CREATE PRETZEL FORM */}
@@ -214,7 +234,7 @@ export default class OneUsers extends Component {
                         <input className='userFieldToHide'
                             type='string'
                             name='userId'
-                            placeholder={this.state.user.name}
+                            // placeholder={this.state.user.name}
                             // onChange={this.handleInputChange}
                             value={this.props.match.params.userId}
 

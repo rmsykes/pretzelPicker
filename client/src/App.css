@@ -103,9 +103,9 @@
 
  /* single user page */
  /* hiding the input for the user in the create pretzel form */
- .userFieldToHide {
+ /* .userFieldToHide {
    display: none;
- }
+ } */
 
  .oneUserPageHeader {
     text-align: center;

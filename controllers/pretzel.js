@@ -15,49 +15,43 @@ PretzelRouter.get('/', (req, res) => {
   PretzelApi.getAllPretzels()
     .then((allPretzels) => {
       res.json(allPretzels)
-
-      // where should i put this code?
-      // PretzelApi.getAllPretzelsByUserId(req.params.userId)
-      //   .then(oneUsersPretzels)
-      //   res.json(oneUsersPretzels)
-
+      })
     })
-})
 
-// getOnePretzel()
-PretzelRouter.get('/:pretzelId', (req, res) => {
-  PretzelApi.getOnePretzel(req.params.pretzelId)
-    .then((singlePretzel) => {
-      res.json(singlePretzel)
-    })
-})
+  // getOnePretzel()
+  PretzelRouter.get('/:pretzelId', (req, res) => {
+    PretzelApi.getOnePretzel(req.params.pretzelId)
+      .then((singlePretzel) => {
+        res.json(singlePretzel)
+      })
+  })
 
-// createPretzel()
-PretzelRouter.post('/', (req, res) => {
-  PretzelApi.createPretzel(req.body)
-    .then((createdPretzel) => {
-      res.json(createdPretzel)
-    })
-})
+  // createPretzel()
+  PretzelRouter.post('/', (req, res) => {
+    PretzelApi.createPretzel(req.body)
+      .then((createdPretzel) => {
+        res.json(createdPretzel)
+      })
+  })
 
-// updatePretzel()
-PretzelRouter.put('/:pretzelId', (req, res) => {
-  PretzelApi.updatePretzel(req.params.pretzelId, req.body)
-    .then((updatedPretzel) => {
-      res.json(updatedPretzel)
-    })
-})
+  // updatePretzel()
+  PretzelRouter.put('/:pretzelId', (req, res) => {
+    PretzelApi.updatePretzel(req.params.pretzelId, req.body)
+      .then((updatedPretzel) => {
+        res.json(updatedPretzel)
+      })
+  })
 
-// deletePretzel()
-PretzelRouter.delete('/:pretzelId', (req, res) => {
-  PretzelApi.deletePretzel(req.params.pretzelId)
-    .then((deletedPretzel) => {
-      res.json(deletedPretzel)
-    })
-})
+  // deletePretzel()
+  PretzelRouter.delete('/:pretzelId', (req, res) => {
+    PretzelApi.deletePretzel(req.params.pretzelId)
+      .then((deletedPretzel) => {
+        res.json(deletedPretzel)
+      })
+  })
 
 
-// EXPORT PRETZEL ROUTER
-module.exports = {
-  PretzelRouter
-}
+  // EXPORT PRETZEL ROUTER
+  module.exports = {
+    PretzelRouter
+  }

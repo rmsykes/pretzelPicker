@@ -36,13 +36,10 @@ export default class HomePage extends Component {
                     <Navbar.Brand href="/">Pretzel Picker</Navbar.Brand>
                     <Nav className="mr-auto">
                         <Nav.Link href="/user">Users</Nav.Link>
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        {/* <Nav.Link href="#features">Features</Nav.Link>
+                        <Nav.Link href="https://rmsykes.github.io/">Creator's Porftolio</Nav.Link> */}
                     </Nav>
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button variant="outline-info">Search</Button>
-                    </Form>
+                    
                 </Navbar>
 
 
