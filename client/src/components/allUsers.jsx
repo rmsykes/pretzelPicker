@@ -25,8 +25,6 @@ export default class AllUsers extends Component {
                 this.setState({ listOfUsers: res.data })
             })
         this.getData();
-
-
     }
 
 
@@ -99,7 +97,7 @@ export default class AllUsers extends Component {
                     <div className='usersListFilteredSearch'>{this.state.filteredData.map(user =>
 
                         <Link to={`/user/${user._id}`}>
-                            <p><img src={user.photo} alt="user photo"/> <br/> {user.name}   </p>
+                            <p><img src={user.photo} alt="user photo" /> <br /> {user.name}   </p>
                         </Link>
                     )}</div>
                 </div>

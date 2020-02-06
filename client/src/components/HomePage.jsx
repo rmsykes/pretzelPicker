@@ -12,16 +12,52 @@ export default class HomePage extends Component {
 
     // HomePage Component State
     state = {
-
+        listOfUsers: [],
+        query: '',
+        filteredData: []
     }
 
     // componentDidMount() - used to bring in data from backend, don't need data right now, but have it ready to pull in /api/pretzelPicker data but need to change state template
     componentDidMount() {
-        axios.get('/')
+        axios.get('/api/user')
             .then((res) => {
-                this.setState({})
+                this.setState({ listOfUsers: res.data })
             })
+        this.getData();
     }
+
+    // sets query state targeting the search input form 
+    handleInputChange = event => {
+        const query = event.target.value;
+
+        this.setState(prevState => {
+            const filteredData = prevState.data.filter(element => {
+                return element.name.toLowerCase().includes(query.toLowerCase());
+            });
+
+            return {
+                query,
+                filteredData
+            };
+        });
+    };
+
+
+    getData = () => {
+        fetch(`/api/user`)
+            .then(response => response.json())
+            .then(data => {
+                const { query } = this.state;
+                const filteredData = data.filter(element => {
+                    return element.name.toLowerCase().includes(query.toLowerCase());
+                });
+
+                this.setState({
+                    data,
+                    filteredData
+                });
+            });
+    };
 
 
     // Rendered in Browser
@@ -39,12 +75,12 @@ export default class HomePage extends Component {
                         {/* <Nav.Link href="#features">Features</Nav.Link>
                         <Nav.Link href="https://rmsykes.github.io/">Creator's Porftolio</Nav.Link> */}
                     </Nav>
-                    
+
                 </Navbar>
 
 
 
-            
+
                 <h1>Pretzel Picker</h1>
 
 
@@ -53,12 +89,36 @@ export default class HomePage extends Component {
                 </div>
 
 
+                <div className='homePageUserArea'>
+                    <div className='homePageUserSearchArea'>
+                        {/* search form field for filtering users */}
+                        <div className="searchAllUsersForm">
+                            <div className='searchAllUserInputField'>
+                                <form>
+                                    <input
+                                        placeholder="Search for..."
+                                        value={this.state.query}
+                                        onChange={this.handleInputChange}
+                                    />
+                                </form>
+                            </div>
+                            <div className='usersListFilteredSearch'>{this.state.filteredData.map(user =>
 
-                <div className='homePageCreateUserArea'>
-                        
+                                <Link to={`/user/${user._id}`}>
+                                    <p><img src={user.photo} alt="user photo" /> <br /> {user.name}   </p>
+                                </Link>
+                            )}</div>
+                        </div>
+                    </div>
+
+
+                    <div className='homePageCreateUserArea'>
+
+                    </div>
                 </div>
 
-                
+
+
 
 
             </div>
