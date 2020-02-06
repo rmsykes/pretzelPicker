@@ -138,7 +138,7 @@ export default class HomePage extends Component {
                 <Navbar bg="dark" variant="dark">
                     <Navbar.Brand href="/">Pretzel Picker</Navbar.Brand>
                     <Nav className="mr-auto">
-                        <Nav.Link href="/user">Users</Nav.Link>
+                        <Link class='navLink' to={`/user`}>Users</Link>
                         {/* <Nav.Link href="#features">Features</Nav.Link>
                         <Nav.Link href="https://rmsykes.github.io/">Creator's Porftolio</Nav.Link> */}
                     </Nav>

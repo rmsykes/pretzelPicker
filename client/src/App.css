@@ -3,16 +3,25 @@
   background-color: blanchedalmond;
 }
 
+.navLink {
+  color: white
+}
+
+.navLink:hover {
+  color: white;
+  text-decoration: none;
+  /* -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1); */
+  -webkit-transform: rotateZ(-30deg);
+  -ms-transform: rotateZ(-30deg);
+  transform: rotateZ(-30deg);
+}
+
 
 
 .pageHeader {
   display: flex;
-}
-
-.pageHeader nav {
-  display: flex;
-  flex-direction: column;
-  background-color: #6c757d;
 }
 
 

@@ -70,10 +70,12 @@ export default class SinglePretzel extends Component {
 
                     <div>
                         {/* Bootstratp nav bar */}
-                        < Navbar bg="dark" variant="dark" >
+                        <Navbar bg="dark" variant="dark">
                             <Navbar.Brand href="/">Pretzel Picker</Navbar.Brand>
                             <Nav className="mr-auto">
-                                <Nav.Link href="/user">Users</Nav.Link>
+                                <Link class='navLink' to={`/user`}>Users</Link>
+                                {/* <Nav.Link href="#features">Features</Nav.Link>
+                        <Nav.Link href="https://rmsykes.github.io/">Creator's Porftolio</Nav.Link> */}
                             </Nav>
                         </Navbar>
                     </div>
@@ -97,7 +99,7 @@ export default class SinglePretzel extends Component {
                     </div>
 
                     <div className='singlePretzelPagePretzelNotes'>
-                        <h2>Notes: <br/> {this.state.pretzel.notes}</h2>
+                        <h2>Notes: <br /> {this.state.pretzel.notes}</h2>
                     </div>
 
 
