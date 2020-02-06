@@ -86,18 +86,20 @@ export default class AllUsers extends Component {
                 <h1>Pretzel People</h1>
 
                 {/* search form field for filtering users */}
-                <div className="searchForm">
-                    <form>
-                        <input
-                            placeholder="Search for..."
-                            value={this.state.query}
-                            onChange={this.handleInputChange}
-                        />
-                    </form>
+                <div className="searchAllUsersForm">
+                    <div className='searchAllUserInputField'>
+                        <form>
+                            <input
+                                placeholder="Search for..."
+                                value={this.state.query}
+                                onChange={this.handleInputChange}
+                            />
+                        </form>
+                    </div>
                     <div className='usersListFilteredSearch'>{this.state.filteredData.map(user =>
 
                         <Link to={`/user/${user._id}`}>
-                            <p>{user.name} <img src={user.photo} alt="user photo" /></p>
+                            <p><img src={user.photo} alt="user photo"/> <br/> {user.name}   </p>
                         </Link>
                     )}</div>
                 </div>

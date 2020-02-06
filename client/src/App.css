@@ -98,23 +98,29 @@
   margin: 35px auto;
 }
 
-.allUsersUserListNameAndPhoto {
-  text-align: center;
+.searchAllUserInputField {
+  display: flex;
+  justify-content: center;
 }
 
-.allUsersUserListNameAndPhoto img {
-   width: 100px;
+.usersListFilteredSearch {
+  text-align: center;
+
+}
+
+.usersListFilteredSearch a{
+  margin: 10px;
+}
+
+ .usersListFilteredSearch img {
+   width: 115px;
+   height: 115px;
    border-radius: 25px;
    box-shadow: 4px 4px black;
    margin: 5px;
  }
 
- .usersListFilteredSearch img {
-   width: 100px;
-   border-radius: 25px;
-   box-shadow: 4px 4px black;
-   margin: 5px;
- }
+
  
 
  /* single user page */
