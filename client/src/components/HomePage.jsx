@@ -120,7 +120,7 @@ export default class HomePage extends Component {
                             value={this.state.newUser.photo} />
                     </div>
 
-                    <input onClick={this.alertUserMade} type="submit" value='Submit' />
+                    <input className='submitFormButton' onClick={this.alertUserMade} type="submit" value='Submit' />
                 </Form>
             </div>
         )

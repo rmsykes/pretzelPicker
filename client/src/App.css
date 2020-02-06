@@ -10,24 +10,55 @@
 .navLink:hover {
   color: white;
   text-decoration: none;
-  /* -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1); */
   -webkit-transform: rotateZ(-30deg);
   -ms-transform: rotateZ(-30deg);
   transform: rotateZ(-30deg);
+  transition: .5s
 }
 
 .createForm {
   background-color: whitesmoke;
   padding: 1px 0 25px 0;
   border-radius: 10px;
+  border: #343a40 3px solid;
 }
 
 .pageHeader {
   display: flex;
 }
 
+.submitFormButton {
+  background-color: #343a40;
+  border: #343a40;
+  border-radius: 10px;
+  color: white;
+  padding: 5px 8px;
+}
+.submitFormButton:hover{
+  background-color: #4c545c;
+  border: #343a40;
+  box-shadow: 0 0 15px black;
+}
+
+
+
+.createNewFormToggleButton {
+  margin: 20px auto;
+}
+
+.createNewFormToggleButton button {
+  background-color: #343a40;
+  border: #343a40;
+  border-radius: 10px;
+  color: white;
+  padding: 5px 8px;
+}
+
+.createNewFormToggleButton :hover {
+  background-color: #4c545c;
+  border: #343a40;
+  box-shadow: 0 0 15px black;
+}
 
 /* Home Page */
 
@@ -72,23 +103,6 @@
   text-align: center;
 }
 
-.createNewFormToggleButton {
-  margin: 20px auto;
-}
-
-.createNewFormToggleButton button {
-  background-color: #343a40;
-  border: #343a40;
-  border-radius: 10px;
-  color: white;
-  padding: 5px 8px;
-}
-
-.createNewFormToggleButton :hover {
-  background-color: #4c545c;
-  border: #343a40;
-  box-shadow: 0 0 15px black;
-}
 
 .newUserNameInputHomePage {
   margin: 20px auto;

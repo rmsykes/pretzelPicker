@@ -172,7 +172,7 @@ export default class OneUsers extends Component {
 
             
                     <br />
-                    <input onClick={this.alertPretzelMade} type="submit" value="Submit New Pretzel" />
+                    <input className='submitFormButton' onClick={this.alertPretzelMade} type="submit" value="Submit New Pretzel" />
                 </Form>
             </div>
         )
