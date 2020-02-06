@@ -1,7 +1,6 @@
 /* universal */
 .App {
   background-color: blanchedalmond;
-
 }
 
 .pageHeader {
@@ -15,6 +14,12 @@
 
 
 /* Home Page */
+
+.homePage {
+  height: 1085px;   /* sets length of homepage to certain length*/
+  overflow: hidden; /* keeps overflow of users from showing on home page*/
+}
+
 .homePage h1 {
   text-align: center;
   margin: 35px auto;
@@ -40,7 +45,6 @@
 .homePageUserArea {
   display:flex;
   justify-content: space-evenly;
-  height: 715px; /* makes home page user area length only 715px*/
 }
 
 .searchAllUserHomePageInputField {
@@ -152,6 +156,7 @@
 
  /* one user page */
 
+
  .oneUserPageHeader {
     text-align: center;
     margin: 30px auto;
@@ -166,6 +171,7 @@
  .oneUserPageBody {
    display: flex;
    justify-content: space-evenly;
+   padding: 0 0 100px 0;
  }
 
  .oneUserMyPretzelArea h2 {
@@ -189,15 +195,13 @@
   text-align: center;
 }
 
-
-.oneUserPretzelListGroup img {
-  height:100px;
-  border-radius: 10px;
+.oneUserPretzelListItem {
+  margin: 30px auto;
 }
 
-
-.oneUserPretzelListGroup {
-  margin: 30px auto;
+.oneUserPretzelListItem img {
+  height:100px;
+  border-radius: 10px;
 }
 
 

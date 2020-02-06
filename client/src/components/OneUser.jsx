@@ -66,7 +66,7 @@ export default class OneUsers extends Component {
     }
 
     // sets newPretzel state on change of form input field for new pretzel
-    handleInputChange = (evt) => {
+    handleNewPretzelInputChange = (evt) => {
         const copiedNewPretzel = { ...this.state.newPretzel }
         copiedNewPretzel[evt.target.name] = evt.target.value
         this.setState({ newPretzel: copiedNewPretzel })
@@ -84,7 +84,6 @@ export default class OneUsers extends Component {
         return (
             <div className='createPretzelForm'>
                 <Form onSubmit={this.createNewPretzel}>
-                    <h1>Create New Pretzel</h1>
 
                     <div className='createPretzelInputField'>
                         <h2>Restaurant Name</h2>
@@ -92,18 +91,18 @@ export default class OneUsers extends Component {
                             type="string"
                             name="restaurantName"
                             placeholder="Restaurant Name"
-                            onChange={this.handleInputChange}
+                            onChange={this.handleNewPretzelInputChange}
                             value={this.state.newPretzel.restaurantName} />
                     </div>
 
 
                     <div className='createPretzelInputField'>
-                        <h2>Ranking</h2>
+                        <h2>Pretzel Ranking</h2>
                         <input
                             type="number"
                             name="ranking"
                             placeholder="Pretzel Ranking"
-                            onChange={this.handleInputChange}
+                            onChange={this.handleNewPretzelInputChange}
                             value={this.state.newPretzel.ranking} />
                     </div>
 
@@ -114,7 +113,7 @@ export default class OneUsers extends Component {
                             type="number"
                             name="price"
                             placeholder="Price"
-                            onChange={this.handleInputChange}
+                            onChange={this.handleNewPretzelInputChange}
                             value={this.state.newPretzel.price} />
                     </div>
 
@@ -125,7 +124,7 @@ export default class OneUsers extends Component {
                             type="select"
                             name="cheese"
                             placeholder="Select True/False"
-                            onChange={this.handleInputChange}
+                            onChange={this.handleNewPretzelInputChange}
                             value={this.state.newPretzel.cheese}>
                             <option value="false">No</option>
                             <option value="true">Yes</option>
@@ -139,7 +138,7 @@ export default class OneUsers extends Component {
                             type="checkbox"
                             name="mustard"
                             placeholder="Select True/False"
-                            onChange={this.handleInputChange}
+                            onChange={this.handleNewPretzelInputChange}
                             value={this.state.newPretzel.mustard}>
                             <option value="false">No</option>
                             <option value="true">Yes</option>
@@ -153,7 +152,7 @@ export default class OneUsers extends Component {
                             type="string"
                             name="photo"
                             placeholder="Pretzel Photo URL"
-                            onChange={this.handleInputChange}
+                            onChange={this.handleNewPretzelInputChange}
                             value={this.state.newPretzel.photo} />
                     </div>
 
@@ -164,17 +163,22 @@ export default class OneUsers extends Component {
                             type="string"
                             name="notes"
                             placeholder="Pretzel Notes"
-                            onChange={this.handleInputChange}
+                            onChange={this.handleNewPretzelInputChange}
                             value={this.state.newPretzel.notes} />
                     </div>
 
 
+            
                     <br />
-                    <br />
-                    <input type="submit" value="Create New Pretzel" />
+                    <input onClick={this.alertPretzelMade} type="submit" value="Submit New Pretzel" />
                 </Form>
             </div>
         )
+    }
+
+
+    alertPretzelMade = () => {
+        alert("Pretzel Created!");
     }
 
     // render in browser
@@ -184,10 +188,10 @@ export default class OneUsers extends Component {
         const filterPretzelByUserId = this.state.pretzelData.filter((singlePretzelData) => singlePretzelData.userId === this.props.match.params.userId)
         const pretzelDataWithUserId = filterPretzelByUserId.map(
             (individualPretzelData) => {
-                return <div className='oneUserPretzelListGroup'>
+                return <div className='oneUserPretzelListItem'>
                     <Link to={`/pretzel/${individualPretzelData._id}`}>
 
-                        <img className='oneUserPretzelListGroupImg' src={individualPretzelData.photo} alt="pretzel photo" />
+                        <img className='oneUserPretzelListItemPhoto' src={individualPretzelData.photo} alt="pretzel photo" />
                         <h5>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h5>
 
                     </Link>
@@ -198,7 +202,7 @@ export default class OneUsers extends Component {
 
 
         return (
-            <div className='oneUsersPage' >
+            <div className='oneUserPage' >
 
                 {/* Bootstrap nav bar */}
                 < Navbar bg="dark" variant="dark" >
@@ -222,10 +226,8 @@ export default class OneUsers extends Component {
                     <div className='oneUserMyPretzelArea'>
                         <h2>My Pretzels</h2>
                         <div className='oneUserPretzelList'>
-
                             {/* FILTERED PRETZEL LIST */}
                             {pretzelDataWithUserId}
-
                         </div>
                     </div>
 
@@ -233,7 +235,7 @@ export default class OneUsers extends Component {
                         <h2>Create New Pretzel</h2>
                         <div className='createNewPretzelToggleFormButton'>
                             {/* button that toggles the create pretzel form. */}
-                            <button onClick={this.toggleHidden}>Create New Pretzel</button>
+                            <button onClick={this.toggleHidden}>New Pretzel Form</button>
                         </div>
                         {this.state.isHidden === false ? this.pretzelForm() : null}
 

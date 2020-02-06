@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { Button, Form, FormControl, FormGroup, Input, FormCheck } from 'react-bootstrap'
+import { Button, Form, FormControl, FormGroup, Input, FormCheck, Alert } from 'react-bootstrap'
 import { Navbar, Nav } from 'react-bootstrap'
 
 
@@ -91,6 +91,10 @@ export default class HomePage extends Component {
         })
     }
 
+    alertUserMade = () => {
+        alert("User Created! Please search for your page!");
+    }
+
     // new user form to be toggled on click in render
     newUserForm = () => {
         return (
@@ -119,7 +123,7 @@ export default class HomePage extends Component {
                     <br />
                     <br />
 
-                    <input type="submit" value='Submit' />
+                    <input onClick={this.alertUserMade} type="submit" value='Submit' />
                 </Form>
             </div>
         )
