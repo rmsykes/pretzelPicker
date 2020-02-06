@@ -109,6 +109,12 @@
    margin: 5px;
  }
 
+ .usersListFilteredSearch img {
+   width: 100px;
+   border-radius: 25px;
+   box-shadow: 4px 4px black;
+   margin: 5px;
+ }
  
 
  /* single user page */
