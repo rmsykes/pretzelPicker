@@ -159,7 +159,9 @@ export default class OneUsers extends Component {
 
                     <div className='createPretzelInputField'>
                         <h2>Notes</h2>
-                        <input
+                        <textarea
+                            rows="5"
+                            columns="50"
                             type="string"
                             name="notes"
                             placeholder="Pretzel Notes"

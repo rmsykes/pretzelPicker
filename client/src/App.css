@@ -3,6 +3,8 @@
   background-color: blanchedalmond;
 }
 
+
+
 .pageHeader {
   display: flex;
 }
@@ -10,6 +12,7 @@
 .pageHeader nav {
   display: flex;
   flex-direction: column;
+  background-color: #6c757d;
 }
 
 
@@ -60,6 +63,20 @@
   margin: 20px auto;
 }
 
+.createNewUserToggleFormButton button {
+  background-color: #343a40;
+  border: #343a40;
+  border-radius: 10px;
+  color: white;
+  padding: 5px 8px;
+}
+
+.createNewUserToggleFormButton :hover {
+  background-color: #4c545c;
+  border: #343a40;
+  box-shadow: 0 0 15px black;
+}
+
 .newUserNameInputHomePage {
   margin: 20px auto;
 }
@@ -95,17 +112,14 @@
 /* Single Pretzel Page */
 .singlePretzelPage {
   background-color: blanchedalmond;
-
+  text-align: center;
+  height: 950px;
 }
 
 .singlePretzelPage h1 {
   margin: 35px auto;
 }
 
-
-.singlePretzelPage {
-  text-align: center;
-}
 
 .singlePretzelPagePretzelBody {
   display: flex;
@@ -119,6 +133,10 @@
 
 .singlePretzelPagePretzelNotes {
   margin: 35px auto;
+}
+
+#deletePretzelButton {
+  margin: 50px auto;
 }
 
 
