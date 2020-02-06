@@ -14,10 +14,15 @@ export default class HomePage extends Component {
     state = {
         listOfUsers: [],
         query: '',
-        filteredData: []
+        filteredData: [],
+        newUser: {
+            name: String,
+            photo: String,
+        },
+        isHidden: true,
     }
 
-    // componentDidMount() - used to bring in data from backend, don't need data right now, but have it ready to pull in /api/pretzelPicker data but need to change state template
+    // componentDidMount() - bring in data on user and query result of search
     componentDidMount() {
         axios.get('/api/user')
             .then((res) => {
@@ -42,7 +47,7 @@ export default class HomePage extends Component {
         });
     };
 
-
+    // get data on users and filter and set state of filtered, matching user and search
     getData = () => {
         fetch(`/api/user`)
             .then(response => response.json())
@@ -60,6 +65,67 @@ export default class HomePage extends Component {
     };
 
 
+    // posts newUser from state to backend. state updated by handleCreateUserInputChange()
+    createNewUser = (evt) => {
+        evt.preventDefault()
+
+        const newUser = this.state.newUser
+        axios.post('api/user', newUser)
+            .then((res) => {
+                this.componentDidMount()
+            })
+    }
+
+    // sets newUser state on change of form input field for new user
+    handleCreateUserInputChange = (evt) => {
+        const copiedNewUser = { ...this.state.newUser }
+        copiedNewUser[evt.target.name] = evt.target.value
+        this.setState({ newUser: copiedNewUser })
+    }
+
+
+    // toggles seeing create user form with create form button
+    toggleHidden = () => {
+        this.setState({
+            isHidden: !this.state.isHidden
+        })
+    }
+
+    // new user form to be toggled on click in render
+    newUserForm = () => {
+        return (
+            <div className='createUserForm'>
+                <Form onSubmit={this.createNewUser}>
+                    <div className='newUserNameInputHomePage'>
+                        <h3>User Name</h3>
+                        <input
+                            type="string"
+                            name="name"
+                            // placeholder="User Name"
+                            onChange={this.handleCreateUserInputChange}
+                            value={this.state.newUser.name} />
+                    </div>
+
+                    <div className='newUserPhotoInputHomePage'>
+                        <h3>User Photo URL</h3>
+                        <input
+                            type="string"
+                            name="photo"
+                            // placeholder="User Photo URL"
+                            onChange={this.handleCreateUserInputChange}
+                            value={this.state.newUser.photo} />
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <input type="submit" value='Submit' />
+                </Form>
+            </div>
+        )
+    }
+
+
     // Rendered in Browser
     render() {
 
@@ -75,7 +141,6 @@ export default class HomePage extends Component {
                         {/* <Nav.Link href="#features">Features</Nav.Link>
                         <Nav.Link href="https://rmsykes.github.io/">Creator's Porftolio</Nav.Link> */}
                     </Nav>
-
                 </Navbar>
 
 
@@ -91,9 +156,10 @@ export default class HomePage extends Component {
 
                 <div className='homePageUserArea'>
                     <div className='homePageUserSearchArea'>
+                        <h2>Existing Users</h2>
                         {/* search form field for filtering users */}
                         <div className="searchAllUsersForm">
-                            <div className='searchAllUserInputField'>
+                            <div className='searchAllUserHomePageInputField'>
                                 <form>
                                     <input
                                         placeholder="Search for..."
@@ -113,7 +179,11 @@ export default class HomePage extends Component {
 
 
                     <div className='homePageCreateUserArea'>
-
+                        <h2>Create New User</h2>
+                        <div className='createNewUserToggleFormButton'>
+                            <button onClick={this.toggleHidden}>Create New User</button>
+                        </div>
+                        {this.state.isHidden === false ? this.newUserForm() : null}
                     </div>
                 </div>
 

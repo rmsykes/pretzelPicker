@@ -38,6 +38,34 @@
   text-align: center;
 }
 
+.homePageUserArea {
+  display:flex;
+  justify-content: space-evenly;
+  margin: 50px auto;
+}
+
+.searchAllUserHomePageInputField {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.homePageCreateUserArea {
+  text-align: center;
+}
+
+.createNewUserToggleFormButton {
+  margin: 20px auto;
+}
+
+.newUserNameInputHomePage {
+  margin: 20px auto;
+}
+
+.newUserPhotoInputHomePage {
+  margin: 20px auto;
+
+}
+
 
 /* All Pretzels Page */
 .allPretzelsPage {

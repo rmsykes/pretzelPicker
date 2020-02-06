@@ -65,7 +65,7 @@ export default class OneUsers extends Component {
             })
     }
 
-    // handleInputChange() on form inputs
+    // sets newPretzel state on change of form input field for new pretzel
     handleInputChange = (evt) => {
         const copiedNewPretzel = { ...this.state.newPretzel }
         copiedNewPretzel[evt.target.name] = evt.target.value
@@ -80,7 +80,7 @@ export default class OneUsers extends Component {
         })
     }
 
-    childForm = () => {
+    pretzelForm = () => {
         return (
             <div className='createPretzelForm'>
                 <Form onSubmit={this.createNewPretzel}>
@@ -215,7 +215,7 @@ export default class OneUsers extends Component {
                     {/* button that toggles the create pretzel form. */}
                     <button  onClick={this.toggleHidden}>Create New Pretzel</button>
                 </div>
-                {this.state.isHidden === false ? this.childForm() : null}
+                {this.state.isHidden === false ? this.pretzelForm() : null}
 
 
             </div >
