@@ -82,7 +82,7 @@ export default class OneUsers extends Component {
 
     pretzelForm = () => {
         return (
-            <div className='createPretzelForm'>
+            <div className='createForm'>
                 <Form onSubmit={this.createNewPretzel}>
 
                     <div className='createPretzelInputField'>
@@ -232,7 +232,8 @@ export default class OneUsers extends Component {
 
                     <div className='oneUserCreatePretzelArea'>
                         <h2>Create New Pretzel</h2>
-                        <div className='createNewPretzelToggleFormButton'>
+
+                        <div className='createNewFormToggleButton'>
                             {/* button that toggles the create pretzel form. */}
                             <button onClick={this.toggleHidden}>New Pretzel Form</button>
                         </div>

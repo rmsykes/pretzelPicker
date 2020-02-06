@@ -18,7 +18,11 @@
   transform: rotateZ(-30deg);
 }
 
-
+.createForm {
+  background-color: whitesmoke;
+  padding: 1px 0 25px 0;
+  border-radius: 10px;
+}
 
 .pageHeader {
   display: flex;
@@ -68,11 +72,11 @@
   text-align: center;
 }
 
-.createNewUserToggleFormButton {
+.createNewFormToggleButton {
   margin: 20px auto;
 }
 
-.createNewUserToggleFormButton button {
+.createNewFormToggleButton button {
   background-color: #343a40;
   border: #343a40;
   border-radius: 10px;
@@ -80,7 +84,7 @@
   padding: 5px 8px;
 }
 
-.createNewUserToggleFormButton :hover {
+.createNewFormToggleButton :hover {
   background-color: #4c545c;
   border: #343a40;
   box-shadow: 0 0 15px black;
@@ -213,10 +217,6 @@
    margin: 20px auto;
  }
 
- .createPretzelForm {
-  text-align: center;
-  margin: 35px auto;
-}
 
 .oneUserPretzelList {
   text-align: center;
@@ -231,12 +231,6 @@
   border-radius: 10px;
 }
 
-
-.createNewPretzelToggleFormButton {
-  display: flex;
-  justify-content: center;
-  margin-top: 35px;
-}
 
 
 

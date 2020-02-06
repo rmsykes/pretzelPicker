@@ -98,7 +98,7 @@ export default class HomePage extends Component {
     // new user form to be toggled on click in render
     newUserForm = () => {
         return (
-            <div className='createUserForm'>
+            <div className='createForm'>
                 <Form onSubmit={this.createNewUser}>
                     <div className='newUserNameInputHomePage'>
                         <h3>User Name</h3>
@@ -151,7 +151,7 @@ export default class HomePage extends Component {
 
 
                     <div className='homePageSiteExplanation'>
-                        <h2>Do you like pretzels? <br /> Want to keep track of the best pretzels? <br /> You're in the right place! </h2>
+                        <h2>Do you like pretzels? <br />You're in the right place! <br/> Keep track of the best pretzels</h2>
                     </div>
                 </div>
 
@@ -183,8 +183,8 @@ export default class HomePage extends Component {
 
                     <div className='homePageCreateUserArea'>
                         <h2>Create New User</h2>
-                        <div className='createNewUserToggleFormButton'>
-                            <button onClick={this.toggleHidden}>Create New User</button>
+                        <div className='createNewFormToggleButton'>
+                            <button onClick={this.toggleHidden}>New User Form</button>
                         </div>
                         {this.state.isHidden === false ? this.newUserForm() : null}
                     </div>
