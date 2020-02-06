@@ -86,7 +86,7 @@ export default class SinglePretzel extends Component {
                         <div className='singlePretzelPageInfo'>
                             <h2>{this.state.pretzel.restaurantName} </h2>
                             <h2>Rank: {this.state.pretzel.ranking}/5</h2>
-                            <h2>${this.state.pretzel.price}</h2>
+                            <h2>Price: ${this.state.pretzel.price}</h2>
                             <h2>Cheese:{isThereCheese}</h2>
                             <h2>Mustard:{isThereMustard}</h2>
                         </div>

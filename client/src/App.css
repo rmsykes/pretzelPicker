@@ -15,15 +15,14 @@
 
 
 /* Home Page */
-
-/* .homePage {
-} */
-
 .homePage h1 {
   text-align: center;
   margin: 35px auto;
 }
 
+.homePageHeader {
+  margin: 50px auto;
+}
 
 .homePageSiteExplanation {
   text-align: center;
@@ -33,15 +32,15 @@
   line-height: 1.5;
 }
 
-.homePagePretzelsByRank {
-  margin: 50px 200px;
-  text-align: center;
+
+.homePageUserSearchArea {
+  overflow:hidden; /* keeps overflow of people hidden */
 }
 
 .homePageUserArea {
   display:flex;
   justify-content: space-evenly;
-  margin: 50px auto;
+  height: 715px; /* makes home page user area length only 715px*/
 }
 
 .searchAllUserHomePageInputField {
@@ -151,11 +150,11 @@
 
  
 
- /* single user page */
+ /* one user page */
 
  .oneUserPageHeader {
     text-align: center;
-    margin: 30px;
+    margin: 30px auto;
  }
 
  .oneUserPageHeader img {
@@ -164,8 +163,21 @@
   text-align: center;
  }
 
- .oneUserPretzelArea h2 {
+ .oneUserPageBody {
+   display: flex;
+   justify-content: space-evenly;
+ }
+
+ .oneUserMyPretzelArea h2 {
     text-align: center;
+ }
+
+ .oneUserCreatePretzelArea {
+   text-align: center;
+ }
+
+ .createPretzelInputField {
+   margin: 20px auto;
  }
 
  .createPretzelForm {
@@ -177,9 +189,24 @@
   text-align: center;
 }
 
+
+.oneUserPretzelListGroup img {
+  height:100px;
+  border-radius: 10px;
+}
+
+
+.oneUserPretzelListGroup {
+  margin: 30px auto;
+}
+
+
 .createNewPretzelToggleFormButton {
   display: flex;
   justify-content: center;
   margin-top: 35px;
 }
+
+
+
 

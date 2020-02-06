@@ -145,13 +145,15 @@ export default class HomePage extends Component {
 
 
 
+                <div className='homePageHeader'>
+                    <h1>Pretzel Picker</h1>
 
-                <h1>Pretzel Picker</h1>
 
-
-                <div className='homePageSiteExplanation'>
-                    <h2>Do you like pretzels? <br /> Want to keep track of the best pretzels? <br /> You're in the right place! </h2>
+                    <div className='homePageSiteExplanation'>
+                        <h2>Do you like pretzels? <br /> Want to keep track of the best pretzels? <br /> You're in the right place! </h2>
+                    </div>
                 </div>
+
 
 
                 <div className='homePageUserArea'>
