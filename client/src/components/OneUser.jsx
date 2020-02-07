@@ -170,7 +170,7 @@ export default class OneUsers extends Component {
                     </div>
 
 
-            
+
                     <br />
                     <input className='submitFormButton' onClick={this.alertPretzelMade} type="submit" value="Submit New Pretzel" />
                 </Form>
@@ -192,9 +192,12 @@ export default class OneUsers extends Component {
             (individualPretzelData) => {
                 return <div className='oneUserPretzelListItem'>
                     <Link to={`/pretzel/${individualPretzelData._id}`}>
+                        <h6>
+                            <img className='oneUserPretzelListItemPhoto' src={individualPretzelData.photo} alt="pretzel photo" />
+                            <br/>
+                            {individualPretzelData.restaurantName} {individualPretzelData.ranking}/5
+                        </h6>
 
-                        <img className='oneUserPretzelListItemPhoto' src={individualPretzelData.photo} alt="pretzel photo" />
-                        <h5>{individualPretzelData.restaurantName} {individualPretzelData.ranking}/5</h5>
 
                     </Link>
                 </div>

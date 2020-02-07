@@ -171,10 +171,10 @@ export default class HomePage extends Component {
                                     />
                                 </form>
                             </div>
-                            <div className='usersListFilteredSearch'>{this.state.filteredData.map(user =>
-
+                            <div className='usersListFilteredSearch'>{this.state.filteredData.map(
+                                (user) =>
                                 <Link to={`/user/${user._id}`}>
-                                    <p><img src={user.photo} alt="user photo" /> <br /> {user.name}   </p>
+                                    <h6><img src={user.photo} alt="user photo" /> <br /> {user.name}   </h6>
                                 </Link>
                             )}</div>
                         </div>
