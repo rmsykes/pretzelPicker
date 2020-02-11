@@ -168,6 +168,9 @@
 
 
 /* All Users Page */
+.allUsersPage {
+  height: 1000px;
+}
 
 .allUsersPage h1 {
   text-align: center;
@@ -215,7 +218,9 @@
  
 
  /* one user page */
-
+ .oneUserPage {
+   height: 1000px;
+ }
 
  .oneUserPageHeader {
     text-align: center;
@@ -232,6 +237,7 @@
    display: flex;
    justify-content: space-evenly;
    padding: 0 0 100px 0;
+
  }
 
  .oneUserMyPretzelArea h2 {
