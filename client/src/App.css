@@ -156,6 +156,7 @@
 .singlePretzelPagePhoto {
   width: 200px;
   border-radius: 25px;
+  border: 5px solid #343a40
 }
 
 .singlePretzelPagePretzelNotes {
@@ -231,6 +232,7 @@
   width: 200px;
   border-radius: 25px;
   text-align: center;
+  border: 5px solid #343a40;
  }
 
  .oneUserPageBody {
