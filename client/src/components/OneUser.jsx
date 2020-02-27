@@ -260,7 +260,7 @@ export default class OneUsers extends Component {
                     </div>
                 </div>
 
-                <button className='deleteButton' id='deleteUserButton' onClick={() => this.deleteUser()}>Delete This User</button>
+                {/* <button className='deleteButton' id='deleteUserButton' onClick={() => this.deleteUser()}>Delete This User</button> */}
                 
             </div >
         )
