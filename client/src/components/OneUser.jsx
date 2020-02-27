@@ -1,7 +1,7 @@
 // imports
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { Form } from 'react-bootstrap'
 // import { Button, FormControl, FormGroup, Input, FormCheck } from 'react-bootstrap'
 
@@ -29,7 +29,8 @@ export default class OneUsers extends Component {
             photo: String,
             userId: String
         },
-        isHidden: true
+        isHidden: true,
+        isRedirect: false,
     }
 
 
@@ -73,6 +74,15 @@ export default class OneUsers extends Component {
     }
 
 
+    //  deletes pretzel on click of delete pretzel button
+    deleteUser = () => {
+        axios.delete(`/api/user/${this.props.match.params.userId}`)
+            .then((res) => {
+                this.setState({ isRedirect: true })
+            })
+    }
+
+
     // toggles seeing create form with create form button
     toggleHidden = () => {
         this.setState({
@@ -82,6 +92,10 @@ export default class OneUsers extends Component {
 
     pretzelForm = () => {
         return (
+
+            
+
+
             <div className='createForm'>
                 <Form onSubmit={this.createNewPretzel}>
 
@@ -197,16 +211,17 @@ export default class OneUsers extends Component {
                             <br/>
                             {individualPretzelData.restaurantName} {individualPretzelData.ranking}/5
                         </h6>
-
-
                     </Link>
                 </div>
             }
         )
 
 
-
         return (
+
+            // redirects to all user on delete by changin is redirect
+            this.state.isRedirect ? <Redirect to="/user" /> : 
+
             <div className='oneUserPage' >
 
                 {/* Bootstrap nav bar */}
@@ -245,12 +260,8 @@ export default class OneUsers extends Component {
                     </div>
                 </div>
 
-
-
-
-
-
-
+                <button className='deleteButton' id='deleteUserButton' onClick={() => this.deleteUser()}>Delete This User</button>
+                
             </div >
         )
     }

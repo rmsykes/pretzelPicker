@@ -103,7 +103,7 @@ export default class SinglePretzel extends Component {
                     </div>
 
 
-                    <button id='deletePretzelButton' onClick={() => this.deletePretzel()}>Delete This Pretzel</button>
+                    <button className='deleteButton' onClick={() => this.deletePretzel()}>Delete This Pretzel</button>
 
 
                 </div>
